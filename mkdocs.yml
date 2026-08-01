@@ -1,5 +1,5 @@
-site_name: RF / SDR / Wireless Security Digest
-site_description: RF、SDR 与无线安全研究技术情报库
+site_name: RF / SDR / Wireless Hack Digest
+site_description: SDR、wireless hack 开源项目与 RF 原理技术情报库
 site_url: https://cheng3100.github.io/rf-sdr-wireless-security-digest/
 repo_url: https://github.com/cheng3100/rf-sdr-wireless-security-digest
 repo_name: cheng3100/rf-sdr-wireless-security-digest
@@ -35,14 +35,11 @@ markdown_extensions:
       alternate_style: true
 
 nav:
-  - 首页: index.md
-  - 每周简报:
-      - 索引: weekly/index.md
+  - Home: index.md
+  - Weekly:
+      - 归档索引: weekly/index.md
+      - 2026-08-01 · 精简版测试: weekly/2026-08-01.md
       - 2026-07-31 · 第 1 期: weekly/2026-07-31.md
-  - 软件型开源项目: software-projects/index.md
-  - 软硬件一体项目: hardware-software-projects/index.md
-  - 无线安全研究: wireless-security/index.md
-  - RF / SDR 原理: rf-sdr-fundamentals/index.md
-  - 协议逆向: protocol-reversing/index.md
-  - 实践实验: experiments/index.md
-  - 编写规范: contributing.md
+  - 软件项目: software-projects/index.md
+  - 软硬件项目: hardware-software-projects/index.md
+  - RF 原理精读: rf-sdr-fundamentals/index.md
