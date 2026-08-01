@@ -1,11 +1,35 @@
-# 软件型开源项目
+# 软件项目
 
-收录以软件实现为主的 SDR 与 wireless hack 项目，包括 SDR 客户端、频谱/瀑布图工具、解调与分析软件、协议逆向工具、GNU Radio/SoapySDR 生态、IQ 工具链、驱动与固件工具。
+本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless hack 项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期三个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
-## 最新关注
+## 2026-08-01
 
-- **SDRangel 7.27.1**：综合 SDR 工作台，适合研究设备抽象、channelizer、实时 IQ pipeline 和插件化解调。
-- **iq_tool 2.5**：用于 IQ 数据的重采样、滤波、频移与校正，适合脚本化离线处理流水线。
-- **FISSURE**：面向信号检测、分类、协议分析、测试与数据归档的综合 RF 研究框架。
+### [iq_tool 2.5](https://github.com/pclov3r/iq_resample_tool)
 
-详细分析见：[2026-08-01 周报](../weekly/2026-08-01.md)。
+用于 IQ 数据重采样、滤波、频率平移和校正的命令行工具，适合放在 SDR 采集与 URH、GNU Radio、Python decoder 之间，构建可重复的离线处理流水线。
+
+### [SDRangel](https://github.com/f4exb/sdrangel)
+
+综合 SDR 收发与分析工作台，覆盖多硬件后端、频谱和瀑布图、channelizer、信道插件及远程控制。适合从设备抽象、实时 IQ pipeline 和插件化解调角度阅读。
+
+### [FISSURE](https://github.com/ainfosec/FISSURE)
+
+面向 RF 研究的综合软件框架，整合信号检测、分类、IQ 操作、协议分析、测试和数据归档。适合从单一信号工具扩展到完整研究工作流后再投入使用。
+
+## 2026-07-31
+
+### [RF-Swift](https://github.com/PentHertz/RF-Swift)
+
+面向 RF 工具链的隔离部署环境，用于减少 GNU Radio、Python、SoapySDR 与设备驱动之间的依赖冲突，适合建立可复现的 PC 或 Raspberry Pi 实验环境。
+
+### [Universal Radio Hacker](https://github.com/jopohl/urh)
+
+面向 OOK、FSK、GFSK 和其他专有无线协议的交互式逆向工具。经典仓库已归档，但其多帧比较、字段划分、编码推断与 CRC 分析思路仍具有参考价值。
+
+### [SDROxide](https://github.com/sdroxide/sdroxide)
+
+Rust 编写的 SDR 客户端方向，适合关注实时 IQ 缓冲、DSP pipeline、线程模型和 Rust 在 SDR 桌面软件中的工程实践。
+
+### [Intercept](https://github.com/luigifcruz/intercept)
+
+将多个 SDR decoder 与信号识别能力聚合到统一界面的项目方向，体现从单纯频谱显示向信号发现、分类和解码工作流整合的趋势。
