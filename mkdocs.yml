@@ -9,7 +9,6 @@ theme:
   language: zh
   features:
     - navigation.tabs
-    - navigation.sections
     - navigation.top
     - search.highlight
     - search.suggest
@@ -36,10 +35,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Weekly:
-      - 归档索引: weekly/index.md
-      - 2026-08-01 · 精简版测试: weekly/2026-08-01.md
-      - 2026-07-31 · 第 1 期: weekly/2026-07-31.md
+  - Weekly: weekly/index.md
   - 软件项目: software-projects/index.md
   - 软硬件项目: hardware-software-projects/index.md
   - RF 原理精读: rf-sdr-fundamentals/index.md
