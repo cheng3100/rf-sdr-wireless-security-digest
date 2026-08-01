@@ -1,20 +1,20 @@
 # 软硬件项目
 
-本页按**收录时间倒序**归档软硬件结合的 SDR / wireless hack 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期三个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+本页按**收录时间倒序**归档软硬件结合的 SDR / wireless hack 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
-## 2026-08-01
+## 2026-08-01 · 四主题测试发布
 
-### [Maia SDR](https://github.com/maia-sdr/maia-sdr)
+### [Maia SDR v0.12.0](https://github.com/maia-sdr/maia-sdr/releases)
 
-基于 ADALM-Pluto 与 FPGA 的开源 SDR 系统，提供设备端频谱处理、浏览器界面和 SigMF IQ 录制。适合研究 RFIC、FPGA 数据面、嵌入式软件与 Web 控制面的分层关系。
+面向 ADALM-Pluto 的开源 FPGA SDR 系统，由 Amaranth HDL、Rust 嵌入式服务、内核模块和 WebAssembly UI 组成，支持高采样率实时瀑布图和 SigMF IQ 录制。
 
-### [PortaPack Mayhem](https://github.com/portapack-mayhem/mayhem-firmware)
+### [PortaPack Mayhem 2.4.0](https://github.com/portapack-mayhem/mayhem-firmware)
 
-运行在 HackRF + PortaPack 上的社区固件，把依赖 PC 的 USB SDR 扩展为带显示、控制、存储和设备端应用的便携 RF 平台。
+运行在 HackRF + PortaPack 上的社区固件，把 USB SDR 扩展为带显示、存储和设备端应用的便携 RF 平台，适合研究有限算力下的 UI、DSP 与硬件控制协同。
 
-### [HackRF](https://github.com/greatscottgadgets/hackrf)
+### [HackRF 2026.01.3](https://github.com/greatscottgadgets/hackrf)
 
-从 RF 硬件、CPLD、MCU 固件到 libhackrf 和主机工具均开放的完整 SDR 平台。适合从 USB streaming、buffer 生命周期和软硬件边界角度系统学习。
+从 RF 硬件、CPLD、MCU 固件到 libhackrf 和主机工具均开放的完整 SDR 平台，适合从 USB streaming、buffer 生命周期和软硬件边界角度系统学习。
 
 ## 2026-07-31
 
