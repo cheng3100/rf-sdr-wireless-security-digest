@@ -1,16 +1,26 @@
 # 软件项目
 
-本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless hack 项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期三个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless hack 项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
-## 2026-08-01
+## 2026-08-01 · 四主题测试发布
+
+### [QRadioLink 0.10.2-1](https://github.com/qradiolink/qradiolink)
+
+基于 GNU Radio 的 SDR 收发客户端，强调语音、数据和双向无线链路。适合研究 GNU Radio 应用如何组织收发状态、调制链、音频/数据接口和 GUI。
+
+### [SDRangel 7.27.1](https://github.com/f4exb/sdrangel/blob/master/CHANGELOG)
+
+综合 SDR 收发与分析工作台，覆盖多硬件后端、频谱和瀑布图、channelizer、信道插件及远程控制。适合从设备抽象、实时 IQ pipeline 和插件化解调角度阅读。
+
+### [rtl_433](https://github.com/merbanan/rtl_433)
+
+面向 ISM 频段传感器、遥控器和其他低功耗设备的解码工具与协议生态，支持结构化输出和多种 SDR 输入。适合作为 Sub-GHz 协议逆向成果工程化的参考。
+
+## 2026-08-01 · 初始测试
 
 ### [iq_tool 2.5](https://github.com/pclov3r/iq_resample_tool)
 
 用于 IQ 数据重采样、滤波、频率平移和校正的命令行工具，适合放在 SDR 采集与 URH、GNU Radio、Python decoder 之间，构建可重复的离线处理流水线。
-
-### [SDRangel](https://github.com/f4exb/sdrangel)
-
-综合 SDR 收发与分析工作台，覆盖多硬件后端、频谱和瀑布图、channelizer、信道插件及远程控制。适合从设备抽象、实时 IQ pipeline 和插件化解调角度阅读。
 
 ### [FISSURE](https://github.com/ainfosec/FISSURE)
 
