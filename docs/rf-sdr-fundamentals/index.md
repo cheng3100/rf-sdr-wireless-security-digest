@@ -4,6 +4,14 @@
 
 本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。
 
+## 2026-08-07
+
+### [PySDR：Link Budgets](https://pysdr.org/zh/content-zh/link_budgets.html)
+
+从系统视角解释发射功率、天线增益、自由空间路径损耗、噪声带宽与 SNR 如何组成链路预算，并用 ADS-B 给出完整示例。
+
+适合把天线、传播、前端、噪声和解调所需 SNR 连接起来，帮助从“软件看频谱”进入完整无线链路的系统思维。
+
 ## 2026-08-01 · 四主题测试发布
 
 ### [The Fundamental Problem of Synchronization](https://wirelesspi.com/fundamental-problem-synchronization/)
