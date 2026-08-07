@@ -2,6 +2,20 @@
 
 本页按**收录时间倒序**归档软硬件结合的 SDR / wireless hack 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-08-07
+
+### [PortaPack Mayhem Nightly 2026-07-26](https://github.com/portapack-mayhem/mayhem-firmware/releases)
+
+7 月继续保持 nightly 构建。项目把 HackRF、显示、按键、存储和设备端 RF 应用组合为便携平台，近期演进持续聚焦协议细节、UI 和现场稳定性。
+
+### [Maia SDR v0.12.0](https://github.com/maia-sdr/maia-sdr/releases)
+
+基于 ADALM-Pluto 的 FPGA SDR 项目，v0.12.0 更新 Rust 2024 生态及多个内部组件，继续提供高采样率瀑布图、Web UI 和 SigMF IQ 录制。
+
+### [Pluto+](https://github.com/plutoplus/plutoplus)
+
+在 PlutoSDR 架构上扩展 Ethernet、外部参考时钟和 SD 卡等能力，并开放原理图与固件构建方法。适合研究 Zynq、AD936x、IIO、FPGA HDL 与 Linux 固件的完整边界。
+
 ## 2026-08-01 · 四主题测试发布
 
 ### [Maia SDR v0.12.0](https://github.com/maia-sdr/maia-sdr/releases)
