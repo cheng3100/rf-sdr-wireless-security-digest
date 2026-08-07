@@ -2,6 +2,20 @@
 
 本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless hack 项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-08-07
+
+### [AetherSDR v26.7.4.1](https://github.com/aethersdr/AetherSDR/releases)
+
+2026 年 7 月 27 日发布的热修复版本，恢复 WSJT-X 和控制面的 TCI rig control。项目近期还持续整合 D-STAR、MCP Server、3D FFT、降噪和语音处理，体现 SDR 客户端向综合工作台发展。
+
+### [SDR++ Nightly 1.3.0](https://github.com/AlexandreRouma/SDRPlusPlus/releases)
+
+采用 rolling/nightly 发布模式的跨平台 SDR 客户端，强调多 VFO、SIMD DSP、模块化 source/sink/decoder，以及原生硬件后端和 SoapySDR 兼容。
+
+### [GNU Radio 4 Web 监控与 CyberEther 互操作](https://www.gnuradio.org/news/2026-05-26-gsoc26-started/)
+
+GNU Radio 2026 GSoC 中的两个软件方向：为运行中的 GR4 flowgraph 提供 Web 监控 OOT 模块，以及实现 CyberEther 与 GNU Radio 的图形化互操作。适合远程实验平台和复杂流图可观察性建设。
+
 ## 2026-08-01 · 四主题测试发布
 
 ### [QRadioLink 0.10.2-1](https://github.com/qradiolink/qradiolink)
