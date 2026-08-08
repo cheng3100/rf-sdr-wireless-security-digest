@@ -1,0 +1,50 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #63c0f5;
+  color: #b5e853;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: rgba(99, 192, 245, 0.12);
+  color: #ffffff;
+}
+
+#main_content {
+  padding-top: 1.5rem;
+}
+
+#main_content table {
+  display: block;
+  overflow-x: auto;
+}
+
+#main_content img {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    gap: 0.35rem;
+  }
+
+  .site-nav a {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
