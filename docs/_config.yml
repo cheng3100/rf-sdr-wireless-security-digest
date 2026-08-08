@@ -1,0 +1,19 @@
+title: RF / SDR / Wireless Hack Digest
+description: SDR、wireless hack 开源项目、RF 动态与 RF 原理技术情报库
+lang: zh-CN
+url: https://cheng3100.github.io
+baseurl: /rf-sdr-wireless-security-digest
+repository: cheng3100/rf-sdr-wireless-security-digest
+theme: jekyll-theme-hacker
+show_downloads: false
+plugins:
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - vendor
