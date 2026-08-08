@@ -1,4 +1,4 @@
-name: Deploy MkDocs site
+name: Deploy Jekyll Hacker site
 
 on:
   push:
@@ -22,17 +22,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          python-version: "3.12"
-          cache: pip
+          ruby-version: "3.3"
+          bundler-cache: true
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Add front matter to Markdown pages
+        shell: bash
+        run: |
+          while IFS= read -r -d '' file; do
+            first_line=$(head -n 1 "$file" || true)
+            if [ "$first_line" != "---" ]; then
+              tmp=$(mktemp)
+              printf '%s\n%s\n%s\n' '---' 'layout: default' '---' > "$tmp"
+              cat "$file" >> "$tmp"
+              mv "$tmp" "$file"
+            fi
+          done < <(find docs -type f -name '*.md' -print0)
 
-      - name: Build site
-        run: mkdocs build --strict
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --source docs --destination site --baseurl "/rf-sdr-wireless-security-digest"
+        env:
+          JEKYLL_ENV: production
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
