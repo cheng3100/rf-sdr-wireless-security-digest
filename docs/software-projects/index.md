@@ -2,6 +2,17 @@
 
 本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless 研究项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-08-14 · 高价值来源测试修订版
+
+### [SDRangel 7.27.1 / MeshCore 插件](https://github.com/f4exb/sdrangel/releases)
+7.27.0/7.27.1 加入并修复 MeshCore Rx/Tx 插件。MeshCore 是基于 LoRa 的离网 mesh 系统，适合观察 SDRangel 如何把调制、解调、协议和 GUI/设备抽象组织进统一插件框架。
+
+### [SatDump 2.0 Alpha](https://www.satdump.org/tags/release/)
+继续把 SDR 输入、DSP、同步、FEC、framing、协议解析和图像/遥测恢复整合在同一 pipeline 中，适合作为“从 IQ 到业务数据”的完整软件架构样本。
+
+### [Universal Radio Hacker v2.10.0](https://github.com/jopohl/urh/releases)
+经典仓库已归档，但最终主版本仍适合作为成熟协议逆向工具基线。后续不再把它视为活跃动态源，而保留其 OOK/FSK/GFSK、多帧比较、编码和 CRC 分析方法论价值。
+
 ## 2026-08-14
 
 ### [SatDump 2.0 Alpha](https://www.satdump.org/tags/release/)
