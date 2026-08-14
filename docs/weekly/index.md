@@ -1,25 +1,26 @@
 # Weekly 简报归档
 
-每期简报固定保留四个主题：
+每期简报固定保留四个主题：软件项目、软硬件项目、RF / Wireless 动态、RF 原理精读。动态栏目强调近期新闻与生态变化；原理栏目强调长期学习价值。
 
-1. 软件为主的 SDR / wireless hack 动向与新项目；
-2. 软硬件结合的 SDR / wireless hack 开源项目动向；
-3. RF / wireless hack 最新动态与新闻；
-4. 本期最值得精读的 RF 原理文章。
+## 2026-08-14
 
-其中，第 3 类强调近期发生的新闻、事件与生态变化；第 4 类强调经典理论和成熟工程原理的长期学习价值。
+### [第 3 期：SatDump 2.0、便携 SDR 与 GNU Radio 社区新方向](2026-08-14.md)
 
-GitHub 作为历史归档和分类查询入口；每期完整内容仍会先在 ChatGPT 对话中发送。以下归档按日期倒序排列，每一期均附带摘要、四个主题的直接入口，以及本次对话发布的原始完整文本。
+**原始文本：** [查看本次 ChatGPT 发布的完整原文](../raw/2026-08-14.md)
+
+**主题入口：** [软件项目](2026-08-14.md#software) · [软硬件项目](2026-08-14.md#hardware-software) · [RF / Wireless 动态](2026-08-14.md#news) · [RF 原理精读](2026-08-14.md#fundamentals)
+
+本期软件方向重点关注 SatDump 2.0 Alpha、SDR++ Nightly 和 gr-satellites，其中 SatDump 最适合观察从 IQ、DSP 到卫星协议与业务数据的完整链路。软硬件方向关注 PortaRF、PortaPack Mayhem 和 Maia SDR，重点比较便携一体化设备与 FPGA/嵌入式分层架构。动态部分跟踪 European GNU Radio Days 2026、FCC Direct-to-Device 频谱议题和 GRCon26，显示 SDR 社区正向频谱共存、无线安全研究和真实试验平台扩展。原理精读回到 PySDR 的 IQ Sampling，用于夯实复基带、负频率、频偏和 IQ imbalance 的基础模型。
 
 ## 2026-08-07
 
-### [第 2 期：客户端演进、便携平台与电磁侧信道](2026-08-07.md)
+### [第 2 期：客户端演进、便携平台与 RF 安全研究](2026-08-07.md)
 
 **原始文本：** [查看本次 ChatGPT 发布的完整原文](../raw/2026-08-07.md)
 
 **主题入口：** [软件项目](2026-08-07.md#software) · [软硬件项目](2026-08-07.md#hardware-software) · [RF / Wireless 动态](2026-08-07.md#news) · [RF 原理精读](2026-08-07.md#fundamentals)
 
-本期软件方向关注 AetherSDR v26.7.4.1、SDR++ Nightly 1.3.0，以及 GNU Radio 4 的 Web 监控和 CyberEther 互操作项目，重点观察 SDR 客户端向数字语音、AI 和远程可观测性扩展。软硬件方向关注 PortaPack Mayhem、Maia SDR 与 Pluto+，覆盖便携设备端应用、FPGA 数据面及开放 Zynq/AD936x 平台。动态部分以 TrojPix 电磁隐蔽信道最值得关注，同时跟踪 GRCon26 和 EuGRD2026 对开源 SDR、安全和实验平台的议题设置。原理精读选择 PySDR 的链路预算章节，用于建立从发射功率、传播损耗、天线和噪声到底层可解调 SNR 的系统视角。
+本期软件方向关注 AetherSDR、SDR++ Nightly 和 GNU Radio 4 的远程可观察性方向。软硬件方向关注 PortaPack Mayhem、Maia SDR 与 Pluto+。动态部分跟踪 GRCon26、EuGRD2026 与 RF 安全研究的新议题。原理精读选择 PySDR 的链路预算章节，建立从发射功率、传播损耗、天线和噪声到可解调 SNR 的系统视角。
 
 ## 2026-08-01
 
@@ -27,7 +28,7 @@ GitHub 作为历史归档和分类查询入口；每期完整内容仍会先在 
 
 **主题入口：** [软件项目](2026-08-01.md#software) · [软硬件项目](2026-08-01.md#hardware-software) · [RF / Wireless 动态](2026-08-01.md#news) · [RF 原理精读](2026-08-01.md#fundamentals)
 
-本期软件方向关注 SDRangel、QRadioLink 与 rtl_433，其中 QRadioLink 最适合观察如何在 GNU Radio 基础上构建完整双向通信应用。软硬件方向重点是 Maia SDR、PortaPack Mayhem 与 HackRF，Maia SDR 最能代表 RFIC、FPGA、嵌入式服务和 Web 控制面的现代组合。动态部分关注 AT&T 完成 EchoStar 频谱交易以及 PortaPack Mayhem 社区持续迭代，体现频谱资产变化和便携 SDR 生态演进。原理精读选择 Wireless Pi 的同步总览文章，用于建立载波频偏、相位恢复、符号定时以及 FLL/PLL 之间的整体认知。
+本期软件方向关注 SDRangel、QRadioLink 与 rtl_433。软硬件方向重点是 Maia SDR、PortaPack Mayhem 与 HackRF。动态部分关注频谱资产变化与便携 SDR 生态演进。原理精读选择 Wireless Pi 的同步总览文章。
 
 ## 2026-07-31
 
@@ -35,4 +36,4 @@ GitHub 作为历史归档和分类查询入口；每期完整内容仍会先在 
 
 **主题入口：** [软件项目](2026-07-31.md#software) · [软硬件项目](2026-07-31.md#hardware-software) · [RF / Wireless 动态](2026-07-31.md#news) · [RF 原理精读](2026-07-31.md#fundamentals)
 
-本期软件方向收录 URH-NG、RF-Swift、SDROxide 与 Intercept，重点是协议逆向工具延续、可复现实验环境和新型 SDR 客户端架构。软硬件方向关注便携 RF 采集节点、OpenWXSDR 与 Open.Space，覆盖持续 IQ 采集、无人值守接收站和低成本多通道阵列。该期尚未独立设置 RF / Wireless 动态栏目，详情页已补充说明并提供固定入口。原理部分围绕 IQ Sampling、数字调制与同步展开，最适合作为从“会看频谱”进入“理解复基带与可靠解调”的基础一期。
+本期软件方向收录多类 SDR 工具与实验环境。软硬件方向关注便携 RF 采集节点、OpenWXSDR 与 Open.Space。该期尚未独立设置 RF / Wireless 动态栏目。原理部分围绕 IQ Sampling、数字调制与同步展开。
