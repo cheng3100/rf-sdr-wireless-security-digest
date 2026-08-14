@@ -2,7 +2,14 @@
 
 本页按**收录时间倒序**归档值得精读的 RF / SDR 原理文章、论文、课程和演讲。每个条目直接链接到原文；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
-本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。
+本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。长期优先来源见 [高价值信息源](../high-value-sources/index.md)。
+
+## 2026-08-14 · 高价值来源测试修订版
+
+### [PySDR：Synchronization](https://pysdr.org/content/sync.html)
+把 symbol timing、coarse frequency synchronization、fine frequency synchronization 与 Costas Loop 放进同一接收链路中解释。适合建立“先处理大频偏与采样时刻，再由细跟踪环持续收敛残余 CFO/phase”的整体模型。
+
+PySDR 以 Pluto 在 2.4 GHz、25 ppm 条件下可能对应约 ±60 kHz CFO 为例，直观说明本振 ppm 误差如何映射为复基带中的实际频偏。
 
 ## 2026-08-14
 
