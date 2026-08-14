@@ -7,6 +7,17 @@
 - **RF / Wireless 动态**：看重时效性，回答“最近发生了什么、可能带来什么影响”。
 - **RF 原理精读**：看重长期学习价值，回答“某个经典理论或成熟工程概念如何被解释清楚”。
 
+## 2026-08-14 · 高价值来源测试修订版
+
+### [Black Hat USA 2026：Blind Trust in the 6 GHz Band](https://blackhat.com/us-26/briefings/schedule/)
+Black Hat USA 2026 Briefings 出现针对 6 GHz Wi-Fi Automated Frequency Coordination（AFC）的安全研究，值得从共享频谱、监管数据库、无线控制面和安全边界的交叉视角持续关注。
+
+### [Black Hat USA 2026：Red Team SIGINT Training](https://blackhat.com/us-26/training/schedule/index.html?track%5B%5D=wireless)
+Wireless/Hardware Training 涵盖 RF/SDR/SIGINT、未知信号识别，以及 automotive、aviation、marine、TETRA、DMR、P25 等较少出现在普通 IoT SDR 教程中的场景。
+
+### [Black Hat Briefings 会后材料](https://blackhat.com/us-26/briefings.html)
+官方会在演讲者提供材料时把 slides、whitepapers 和 tools 放到对应 session page；2026 年 on-demand Briefings 从 8 月 14 日起开放给相应 pass 用户。Black Hat 因此被纳入长期高价值信息源列表。
+
 ## 2026-08-14
 
 ### [European GNU Radio Days 2026](https://gnuradiodays.sciencesconf.org/)
