@@ -2,6 +2,14 @@
 
 本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-08-14 · 高价值来源测试修订版
+
+### [PortaPack Mayhem Nightly 2026-07-26](https://github.com/portapack-mayhem/mayhem-firmware/releases)
+7 月 nightly 中出现 TETRA RX、VOR Navigation、EPIRB TX SGB 等无线应用相关变化。它持续体现 HackRF + PortaPack 这种受限嵌入式 RF 平台如何在 UI、DSP、存储和协议应用之间做资源取舍。
+
+### [Maia SDR](https://maia-sdr.org/)
+继续作为“RFIC + FPGA + Linux + Web UI”架构代表：AD936x 负责 RF 收发，FPGA 承担高带宽频谱/DSP 数据面，ARM/Linux 运行设备服务并导出 SigMF 数据。
+
 ## 2026-08-14
 
 ### [PortaRF](https://www.cnx-software.com/2026/05/14/portarf-single-board-sdr-mixes-hackrf-one-and-portapack-h4m-hardware-adds-ai-voice-control/)
