@@ -8,7 +8,8 @@
 - 每期检索时优先检查这些来源是否有新材料，再进行更广泛搜索；
 - 某来源只有在多个更新周期中反复证明有价值时才加入；
 - 来源短期没有更新是正常的，不因“保持新鲜”而替换；
-- 原理学习与最新动态分开评价：经典文章可以长期保留，会议/项目站点则重点检查增量。
+- 原理学习与最新动态分开评价：经典文章可以长期保留，会议/项目站点则重点检查增量；
+- 对会议型来源，**具体研究条目必须优先链接具体 session / training / slides / whitepaper / paper / tool 页面**，不能用会议首页或总议程页冒充材料链接；如果材料尚未公开，必须明确标注状态。
 
 ## PySDR
 
@@ -18,15 +19,7 @@
 
 **长期价值：** 内容结构系统，覆盖 IQ、采样、FFT、滤波、数字调制、链路预算、信道编码、SigMF、同步等核心主题；历史 Weekly 已多次从这里选出高价值原理文章。
 
-**适合关注：**
-
-- IQ / complex baseband；
-- sampling / aliasing / FFT；
-- filtering / pulse shaping；
-- digital modulation；
-- link budget / noise / SNR；
-- IQ file / SigMF；
-- carrier、timing、frame synchronization。
+**适合关注：** IQ / complex baseband、sampling / aliasing / FFT、filtering / pulse shaping、digital modulation、link budget / noise / SNR、IQ file / SigMF、carrier/timing/frame synchronization。
 
 **使用注意：** 更适合作为原理学习主线，而不是追求新闻时效性。后续优先检查章节新增、重大修订以及与当前学习主题直接相关的章节，不必每期重复收录。
 
@@ -36,23 +29,20 @@
 
 **入口：** [Black Hat Briefings](https://blackhat.com/briefings/)
 
-**是什么：** Black Hat 官方会议内容库。Briefings 会公开会议议程，并在演讲者提供材料时发布 slides、whitepapers 和 tools；Training 中也会出现较系统的硬件、无线和 SDR 课程。
+**是什么：** Black Hat 官方会议内容库。Briefings 会公开议题，并在演讲者提供材料时发布 slides、whitepapers 和 tools；Training 中也会出现较系统的硬件、无线和 SDR 课程。
 
 **长期价值：** 对 wireless hack 而言，其价值不只在“安全新闻”，而在于经常出现将 RF 原理、真实硬件、协议、攻击面和实验方法结合起来的材料，尤其适合寻找软硬结合的 SDR/RF slides 与安全研究案例。
 
-**适合关注：**
+**适合关注：** Wireless / Network Security、Hardware / Embedded、Cyber-Physical Systems & IoT、RF / SDR / SIGINT、Wi-Fi / Bluetooth / cellular / mission-critical radio、electromagnetic side channel / TEMPEST、automotive / aviation / marine / physical access RF。
 
-- Wireless / Network Security；
-- Hardware / Embedded；
-- Cyber-Physical Systems & IoT；
-- RF / SDR / SIGINT；
-- Wi-Fi / Bluetooth / cellular / mission-critical radio；
-- electromagnetic side channel / TEMPEST；
-- automotive、aviation、marine 与 physical access RF。
+**使用注意：** Black Hat 内容质量和与 RF 的相关性差异较大，后续只筛选真正涉及无线物理层、频谱、射频硬件、协议空口或电磁侧信道的内容，不因为会议热度而泛化收录。对于每个具体研究条目：
 
-**使用注意：** Black Hat 内容质量和与 RF 的相关性差异较大，后续只筛选真正涉及无线物理层、频谱、射频硬件、协议空口或电磁侧信道的内容，不因为会议热度而泛化收录。优先链接官方 session page 和官方 Presentation Material。
+1. 优先给出具体 session / training 页面；
+2. 若 `Presentation Material` 已公开，直接链接 slide/whitepaper/tool；
+3. 若尚未找到可验证公开材料链接，明确标注“当前未找到”，不得用 Briefings 首页或总日程页代替；
+4. 可补充研究团队自己的具体技术页面或案例文章，但要与官方入口区分。
 
-**代表内容：** [Black Hat USA 2026 Briefings](https://blackhat.com/us-26/briefings.html) · [Black Hat USA 2026 Schedule](https://blackhat.com/us-26/briefings/schedule/) · [Red Team SIGINT Training](https://blackhat.com/us-26/training/schedule/index.html?track%5B%5D=wireless)
+**代表内容：** [Black Hat USA 2026 Briefings](https://blackhat.com/us-26/briefings.html) · [Black Hat USA 2026 Schedule](https://blackhat.com/us-26/briefings/schedule/) · [Red Team SIGINT — Midnight Blue 具体课程页](https://www.midnightblue.nl/explore/training/red-team-sigint-practical-sdr-hacking)
 
 ## Wireless Pi
 
