@@ -2,15 +2,15 @@
 
 每期简报固定保留五个主题：软件项目、软硬件项目、RF / Wireless 动态、会议 / 活动高质量研究、RF 原理精读。动态栏目强调近期新闻与生态变化；会议研究栏目强调完整研究链路与高质量 slides/whitepaper/paper/tool；原理栏目强调长期学习价值。每期检索前会优先检查 [长期高价值信息源](../high-value-sources/index.md) 的增量，再扩展到更广泛来源。
 
-## 2026-08-14 · 五主题修订版
+## 2026-08-14 · 五主题链接校正版
 
 ### [第 3 期修订：Black Hat 会议研究、MeshCore 与接收机同步](2026-08-14.md)
 
-**原始文本：** [首次发布](../raw/2026-08-14.md) · [高价值来源测试](../raw/2026-08-14-02.md) · [五主题修订原文](../raw/2026-08-14-03.md)
+**原始文本：** [首次发布](../raw/2026-08-14.md) · [高价值来源测试](../raw/2026-08-14-02.md) · [五主题修订](../raw/2026-08-14-03.md) · [链接校正版](../raw/2026-08-14-04.md)
 
 **主题入口：** [软件项目](2026-08-14.md#software) · [软硬件项目](2026-08-14.md#hardware-software) · [RF / Wireless 动态](2026-08-14.md#news) · [会议研究](2026-08-14.md#conference-research) · [RF 原理精读](2026-08-14.md#fundamentals)
 
-本期正式采用五主题结构。软件方向重点是 SDRangel 的 MeshCore Rx/Tx 插件与 SatDump 的完整 SDR pipeline；软硬件方向继续跟踪 PortaPack Mayhem 的 TETRA/VOR/EPIRB 设备端能力和 Maia SDR 的 FPGA/Linux 分层。动态部分关注 Black Hat USA 2026 进入会后材料释放阶段；新增的会议研究栏目则把 6 GHz Wi-Fi AFC 与 Red Team SIGINT 按“机制→SDR/RF 验证→安全影响”的研究链路单独整理。原理精读继续选择 PySDR Synchronization，并保持高价值来源列表小而稳定。
+本期正式采用五主题结构。软件方向重点是 SDRangel 的 MeshCore Rx/Tx 插件与 SatDump；软硬件方向继续跟踪 PortaPack Mayhem 与 Maia SDR。动态部分关注 Black Hat USA 2026 会后研究材料；会议研究栏目重点整理 6 GHz Wi-Fi AFC 与 Red Team SIGINT。此次链接校正后，Black Hat 条目严格区分具体议题/课程入口与实际 slides/whitepaper/tool：目前 AFC 可精确确认议题、时间、讲者和研究背景，但未找到可验证公开 slide/whitepaper URL；Red Team SIGINT 则补充了 Midnight Blue 的具体课程页和 THSR/TETRA 案例文章。
 
 ## 2026-08-07
 
