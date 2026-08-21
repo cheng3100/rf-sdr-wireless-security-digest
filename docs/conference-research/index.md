@@ -15,10 +15,34 @@
 ## 链接规则
 
 - 会议研究条目必须优先给出**能直接定位到具体议题/课程/材料的链接**，不能只链接会议首页、总日程或筛选后的 track 页面；
-- 对 Black Hat 这类单页 schedule，如果具体条目有 fragment ID，必须保留完整 `#fragment`，例如 `.../schedule/#blind-trust-...-53998`；
+- 对 Black Hat 这类单页 schedule，如果具体条目有 fragment ID，必须保留完整 `#fragment`；
 - 若官方 slides / whitepaper / tool 已公开，直接链接材料；
 - 若尚未找到可验证的公开材料链接，必须明确写“当前未找到可验证公开 slides/whitepaper/tool”，不得把会议主页或总日程冒充材料链接；
 - 若无法确认官方唯一 fragment，不猜测 URL；改用作者/研究团队的独立具体技术页面作为主要入口，同时把官方 track/list 页面仅作为会议归属证明。
+
+## 2026-08-21
+
+### BLERP：BLE Re-Pairing Attacks and Defenses
+
+**具体研究页：** [NDSS — BLERP: BLE Re-Pairing Attacks and Defenses](https://www.ndss-symposium.org/ndss-paper/blerp-ble-re-pairing-attacks-and-defenses/)
+
+**论文 PDF：** [2026-f121-paper.pdf](https://www.ndss-symposium.org/wp-content/uploads/2026-f121-paper.pdf)
+
+**Slides PDF：** [f0121-sacchetti-slides.pdf](https://www.ndss-symposium.org/wp-content/uploads/f0121-sacchetti-slides.pdf)
+
+**Black Hat Asia 2026 研究团队条目：** [EURECOM — Exploiting BLE re-pairing with the BLERP attacks](https://www.eurecom.fr/en/publication/8697?slug=exploiting-ble-re-pairing-with-the-blerp-attacks)
+
+BLERP 研究 BLE re-pairing 的信任边界。BLE 允许已配对设备重新协商并替换安全状态/密钥，作者分析出多项设计层漏洞，包括 unauthenticated re-pairing 与 security-level downgrade，并构造 Central/Peripheral impersonation、single-channel MitM 和 double-channel MitM 等攻击。
+
+作者还实现了 BLERP toolkit，使用低成本 **nRF52** 与 **Mynewt / NimBLE / Scapy** 做 OTA pairing/re-pairing 测试和端到端 MitM，并在 22 个目标上评估。
+
+**研究链路：** BLE pairing/session establishment → re-pairing trust boundary → key/security-level overwrite or downgrade → nRF52 OTA tool → impersonation/MitM → mitigation。
+
+**长期价值：** 这是很适合 wireless hack 学习的方法论样本：从规范/状态机入手，寻找 trust boundary，再用低成本无线硬件构造可复现实验，最后回到协议修复。
+
+### 本期最值得精读的会议 / 活动研究
+
+**BLERP。** 它的材料链非常完整：独立 research page、paper、slides、Black Hat Asia 研究条目和可复现实验工具都能串起来。
 
 ## 2026-08-14
 
@@ -32,28 +56,16 @@
 
 **研究链路：** 6 GHz shared spectrum 规则 → AFC 输入与信任边界 → 位置/设备参数等输入被错误信任或伪造 → 频谱授权决策异常 → 潜在 RF 干扰与共存风险。
 
-**长期价值：** 适合学习 Wi-Fi PHY/MAC 之外的频谱管理依赖，以及 RF 规则、位置、监管数据库与网络安全如何组成新的系统攻击面。
-
-**slides / whitepaper / tool 状态：** Black Hat 官方说明材料若由演讲者提交，会出现在具体 session 页面底部的 `Presentation Material`。截至本次修订，**当前未找到可验证的独立公开 slides / whitepaper / tool URL**。后续只在找到确切材料 URL 后补入。
+**slides / whitepaper / tool 状态：** 当前未找到可验证的独立公开 slides / whitepaper / tool URL。
 
 ### Red Team SIGINT — Practical SDR hacking for mission-critical, automotive, aviation, and marine targets
-
-课程覆盖 RF、SDR、SIGINT、未知信号识别，以及 automotive、aviation、marine、physical access、TETRA、DMR、P25 等 mission-critical radio。Black Hat 官方课程描述还包括拦截/解密手持无线通信、汽车安全系统测试，以及铁路、水务、无人机和警务/军用无线电攻击案例。
 
 **主要具体入口：** [Midnight Blue — Red Team SIGINT: Practical SDR hacking](https://www.midnightblue.nl/explore/training/red-team-sigint-practical-sdr-hacking)
 
 **Black Hat 官方归属/课程列表证明：** [Black Hat USA 2026 Wireless Training](https://blackhat.com/us-26/training/schedule/index.html?track%5B%5D=wireless)
 
-> 当前未确认 Black Hat Training 页面中该课程的唯一 fragment ID，因此不伪造或猜测具体锚点。后续一旦得到可验证 fragment，将替换上面的 track/list 链接。
-
 **相关具体案例材料：** [Midnight Blue — Analyzing the Taiwan High-Speed Rail (THSR) TETRA cyber incident, part 1](https://www.midnightblue.nl/blog/analyzing-the-taiwan-high-speed-rail-thsr-tetra-cyber-incident-part-1)
 
-**研究/方法链：** RF 基础 → 信号发现与识别 → SDR capture / analysis → 协议与系统安全弱点 → 真实行业无线系统验证。
+课程覆盖 RF、SDR、SIGINT、未知信号识别，以及 automotive、aviation、marine、physical access、TETRA、DMR、P25 等 mission-critical radio。
 
-**长期价值：** 适合作为综合 RF security methodology 入口，尤其补足普通 SDR 教程较少覆盖的 mission-critical、交通和基础设施无线系统。
-
-**slides / lab / tool 状态：** 当前可验证的公开资料以 Midnight Blue 课程页和公开案例文章为主；**未找到可验证的 Black Hat 公开 slide deck URL**。
-
-### 本期最值得精读的会议 / 活动研究
-
-**Blind Trust in the 6 GHz Band。** 它最能体现本页定位：从频谱规则与系统架构找到新的信任边界，再把控制面问题落回真实 RF 干扰和频谱共存。
+**slides / lab / tool 状态：** 当前未找到可验证的 Black Hat 公开 slide deck URL。
