@@ -7,12 +7,20 @@
 - **RF / Wireless 动态**：看重时效性，回答“最近发生了什么、可能带来什么影响”。
 - **RF 原理精读**：看重长期学习价值，回答“某个经典理论或成熟工程概念如何被解释清楚”。
 
+## 2026-08-21
+
+### Wi-Fi beamforming feedback 被用于无摄像头人体识别
+8 月 18 日公开报道的一项研究显示，普通 Wi-Fi 基础设施中的 beamforming feedback 可以被用于人体识别；报道描述的实验在 197 名参与者上取得接近 100% 的识别率。值得关注的是原本用于链路优化的 PHY/CSI 类反馈正在成为隐私侧信道，后续 Wi-Fi sensing 标准的隐私边界值得持续跟踪。
+
+### [FCC：Unleashing Unlicensed Spectrum for Direct-to-Device](https://www.fcc.gov/document/fcc-looks-expand-d2d-satellite-connectivity-unlicensed-wireless)
+FCC 在 2026-08-06/07 推进 FCC-26-51 / ET Docket 26-169，探索允许部分 Part 15 非授权频段设备与获授权卫星直接通信，并讨论非授权设备在 spacecraft 中的使用。
+
 ## 2026-08-14 · 高价值来源测试修订版
 
-### [Black Hat USA 2026：Blind Trust in the 6 GHz Band](https://blackhat.com/us-26/briefings/schedule/)
+### [Black Hat USA 2026：Blind Trust in the 6 GHz Band](https://blackhat.com/us-26/briefings/schedule/#blind-trust-in-the-6-ghz-band-weaponizing-wi-fi-automated-frequency-coordination-afc-53998)
 Black Hat USA 2026 Briefings 出现针对 6 GHz Wi-Fi Automated Frequency Coordination（AFC）的安全研究，值得从共享频谱、监管数据库、无线控制面和安全边界的交叉视角持续关注。
 
-### [Black Hat USA 2026：Red Team SIGINT Training](https://blackhat.com/us-26/training/schedule/index.html?track%5B%5D=wireless)
+### [Black Hat USA 2026：Red Team SIGINT Training](https://www.midnightblue.nl/explore/training/red-team-sigint-practical-sdr-hacking)
 Wireless/Hardware Training 涵盖 RF/SDR/SIGINT、未知信号识别，以及 automotive、aviation、marine、TETRA、DMR、P25 等较少出现在普通 IoT SDR 教程中的场景。
 
 ### [Black Hat Briefings 会后材料](https://blackhat.com/us-26/briefings.html)
