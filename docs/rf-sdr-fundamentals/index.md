@@ -1,8 +1,15 @@
 # RF 原理精读
 
-本页按**收录时间倒序**归档值得精读的 RF / SDR 原理文章、论文、课程和演讲。每个条目直接链接到原文；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+本页按**收录时间倒序**归档值得精读的 RF / SDR 原理文章、论文、课程和演讲。每个条目直接链接到原文；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
 本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。长期优先来源见 [高价值信息源](../high-value-sources/index.md)。
+
+## 2026-08-21
+
+### [PySDR：End-to-End Example with RDS](https://pysdr.org/content/rds.html)
+使用真实 FM 广播中的 Radio Data System（RDS）把多个 SDR/DSP 环节串成完整 receiver：IQ acquisition → FM demod → frequency shift → filtering → decimation/resampling → symbol timing → fine frequency synchronization → BPSK demod → bit/byte parsing。
+
+适合作为 IQ Sampling、Link Budget、Synchronization 之后的整链路练习。重点不是单个算法，而是观察采样率转换、滤波、频偏和同步状态如何层层影响最终 protocol decode。
 
 ## 2026-08-14 · 高价值来源测试修订版
 
