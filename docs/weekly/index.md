@@ -2,6 +2,16 @@
 
 每期简报固定保留五个主题：软件项目、软硬件项目、RF / Wireless 动态、会议 / 活动高质量研究、RF 原理精读。动态栏目强调近期新闻与生态变化；会议研究栏目强调完整研究链路与高质量 slides/whitepaper/paper/tool；原理栏目强调长期学习价值。每期检索前会优先检查 [长期高价值信息源](../high-value-sources/index.md) 的增量，再扩展到更广泛来源。
 
+## 2026-08-21
+
+### [第 4 期：Radio-FM、Pocket SDR、BLERP 与 RDS 整链路](2026-08-21.md)
+
+**原始文本：** [查看本次 ChatGPT 发布的完整原文](../raw/2026-08-21.md)
+
+**主题入口：** [软件项目](2026-08-21.md#software) · [软硬件项目](2026-08-21.md#hardware-software) · [RF / Wireless 动态](2026-08-21.md#news) · [会议研究](2026-08-21.md#conference-research) · [RF 原理精读](2026-08-21.md#fundamentals)
+
+本期软件方向重点看 radiom 的远程多 decoder SDR 工作台和 Radio-FM 的原始 I/Q foundation model；软硬件方向重点是 Pocket SDR v0.19 的多通道 GNSS RF frontend→tracking→PVT 完整链路，以及 HackRF Pro 主线配置能力。动态部分关注 Wi-Fi beamforming feedback 转化为隐私侧信道，以及 FCC 对 unlicensed D2D satellite 的推进。会议研究选择 BLERP，因为具备独立 research page、paper、slides、Black Hat Asia 研究条目和 nRF52 可复现实验链；原理精读选择 PySDR RDS end-to-end，把 IQ/filter/resample/sync/demod/protocol 串起来。
+
 ## 2026-08-14 · 五主题精确链接校正版
 
 ### [第 3 期修订：Black Hat 会议研究、MeshCore 与接收机同步](2026-08-14.md)
