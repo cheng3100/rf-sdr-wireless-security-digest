@@ -1,6 +1,14 @@
 # 软硬件项目
 
-本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+
+## 2026-08-21
+
+### [Pocket SDR v0.19](https://github.com/tomojitakasu/PocketSDR)
+开源多通道 GNSS SDR，包括 2/4/8 通道 RF frontend、IF 采集与 Python/C/C++ 接收机。v0.19 加入 Galileo E1 CBOC / E5 AltBOC 等多级副载波 replica 的 int8 correlator 支持，并增强低 C/N0 acquisition/tracking、pilot extended coherent tracking 和多 stream 输出。
+
+### [HackRF 主线](https://github.com/greatscottgadgets/hackrf)
+稳定版仍为 2026.01.3，但主线持续推进 radio configuration mode、固定点 center-frequency/sample-rate、radio register locking 和 transceiver temperature 等 HackRF Pro 能力，值得继续观察 libhackrf、MCU firmware、gateware 与 RF transceiver 配置接口的演进。
 
 ## 2026-08-14 · 高价值来源测试修订版
 
