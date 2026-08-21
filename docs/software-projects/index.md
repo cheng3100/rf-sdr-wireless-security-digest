@@ -1,6 +1,14 @@
 # 软件项目
 
-本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless 研究项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期四个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless 研究项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+
+## 2026-08-21
+
+### [radiom](https://github.com/thepacket/radiom)
+面向移动端/浏览器的 SDR 客户端，可连接 KiwiSDR、OpenWebRX 和 RTL_TCP，并把大量协议 decoder 集成到统一界面。适合研究远程 SDR source、网络访问、协议处理和移动 UI 的组合方式。
+
+### [Radio-FM](https://arxiv.org/abs/2608.05793)
+2026 年 8 月提交的 RF foundation model，直接从原始 I/Q 学习通用 radio representation，并覆盖调制识别、雷达、发射机识别、无线技术识别与干扰识别等任务。
 
 ## 2026-08-14 · 高价值来源测试修订版
 
