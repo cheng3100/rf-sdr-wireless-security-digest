@@ -2,6 +2,14 @@
 
 本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless 研究项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-08-28
+
+### [AetherSDR v26.8.4](https://github.com/aethersdr/AetherSDR/releases/tag/v26.8.4)
+2026-08-23 发布，继续扩展 Icom 与 Hermes-Lite 2 backend 的 capability model、CI-V/CW/FM/IF filter 控制、恢复机制与 PSK Reporter/NR2 等功能。适合观察真实 SDR workstation 中多 radio backend、网络 transport、DSP/UI 和 authoritative state 的工程分层。
+
+### [GNU Radio 4 官方仓库组织正式化](https://www.gnuradio.org/news/)
+GNU Radio 官方于 2026-08-16 公布 GR4 仓库重构方向，将 runtime/core、可复用 DSP library、standard blocks 等拆成职责更明确的组件，并通过 builder/super-repo 组合。重点仓库包括 [gnuradio4-core](https://github.com/gnuradio/gnuradio4-core)、[gnuradio4-library](https://github.com/gnuradio/gnuradio4-library) 与 [gnuradio4-blocks](https://github.com/gnuradio/gnuradio4-blocks)。
+
 ## 2026-08-21
 
 ### [radiom](https://github.com/thepacket/radiom)
