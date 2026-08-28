@@ -7,6 +7,14 @@
 - **RF / Wireless 动态**：看重时效性，回答“最近发生了什么、可能带来什么影响”。
 - **RF 原理精读**：看重长期学习价值，回答“某个经典理论或成熟工程概念如何被解释清楚”。
 
+## 2026-08-28
+
+### [BlueZ A2DP stream endpoint 栈溢出：ZDI-26-589 / CVE-2026-19774](https://www.zerodayinitiative.com/advisories/ZDI-26-589/)
+Zero Day Initiative 在 2026-08-24 公布该漏洞。BlueZ 对 A2DP stream endpoint 中用户可控长度缺少充分校验，复制到固定长度栈 buffer 时产生溢出；攻击者需要先让恶意 Bluetooth 设备完成 pairing，但成功后可能在 bluetoothd/root 上下文执行代码。
+
+### [BlueZ EIR discovery 栈溢出：CVE-2026-80186](https://security.snyk.io/vuln/SNYK-DEBIAN11-BLUEZ-19268263)
+2026-08-25 公开。攻击者处于 Bluetooth 无线范围内即可发送精心构造的 Extended Inquiry Response packet，触发 BlueZ discovery 路径 stack overflow，可导致 bluetoothd 崩溃并可能达到代码执行。与 A2DP 漏洞对比，它暴露的是 pairing/profile 建立之前的 discovery metadata attack surface。
+
 ## 2026-08-21
 
 ### Wi-Fi beamforming feedback 被用于无摄像头人体识别
