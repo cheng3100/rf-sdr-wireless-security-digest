@@ -2,6 +2,16 @@
 
 每期简报固定保留五个主题：软件项目、软硬件项目、RF / Wireless 动态、会议 / 活动高质量研究、RF 原理精读。动态栏目强调近期新闻与生态变化；会议研究栏目强调完整研究链路与高质量 slides/whitepaper/paper/tool；原理栏目强调长期学习价值。每期检索前会优先检查 [长期高价值信息源](../high-value-sources/index.md) 的增量，再扩展到更广泛来源。
 
+## 2026-08-28
+
+### [第 5 期：AetherSDR、H4M Pro 开源、BlueZ 与主动电磁侧信道](2026-08-28.md)
+
+**原始文本：** [查看本次 ChatGPT 发布的完整原文](../raw/2026-08-28.md)
+
+**主题入口：** [软件项目](2026-08-28.md#software) · [软硬件项目](2026-08-28.md#hardware-software) · [RF / Wireless 动态](2026-08-28.md#news) · [会议研究](2026-08-28.md#conference-research) · [RF 原理精读](2026-08-28.md#fundamentals)
+
+本期软件方向重点关注 AetherSDR v26.8.4 的多 radio backend 能力建模与 GNU Radio 4 官方仓库重构；软硬件方向关注 H4M Pro PCB/Gerber/schematic 正式开源并合入 Mayhem。动态部分聚焦 BlueZ 一周内连续公开的 A2DP 与 EIR/discovery 两条 Bluetooth 栈内存安全攻击面。会议研究选择 USENIX Security ’26 的 Injected and Leaked，把 RF injection、mixed-signal hardware nonlinearity 与约 30 m 电磁侧信道窃听串成完整研究链；原理精读选择 PySDR Pulse Shaping，连接 RC/RRC、matched filter、ISI、eye diagram 与 timing recovery。
+
 ## 2026-08-21
 
 ### [第 4 期：Radio-FM、Pocket SDR、BLERP 与 RDS 整链路](2026-08-21.md)
