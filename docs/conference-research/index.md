@@ -20,6 +20,26 @@
 - 若尚未找到可验证的公开材料链接，必须明确写“当前未找到可验证公开 slides/whitepaper/tool”，不得把会议主页或总日程冒充材料链接；
 - 若无法确认官方唯一 fragment，不猜测 URL；改用作者/研究团队的独立具体技术页面作为主要入口，同时把官方 track/list 页面仅作为会议归属证明。
 
+## 2026-08-28
+
+### [USENIX Security ’26：Injected and Leaked — Actively Inducing Side-Channel Leakage Using Electromagnetic Injection and Hardware Nonlinearity](https://www.usenix.org/conference/usenixsecurity26/presentation/yan-haoran)
+
+**论文 PDF：** [usenixsecurity26-yan-haoran.pdf](https://www.usenix.org/system/files/usenixsecurity26-yan-haoran.pdf)
+
+研究把 EM injection 与 EM side-channel leakage 连接起来：攻击者主动注入 RF，让放大器、ADC、电源转换器等非线性器件把低频 secret signal 与注入 carrier 混频/调制，从而把原本难以观测的低频秘密搬移到更容易远距离接收的电磁频段。
+
+作者设计 InjectEave，并展示使用可获得 RF equipment 对有线/无线耳机播放音频进行约 30 m 远距离窃听及穿墙实验；同时分析智能家居功耗、模拟传感器输入等低频秘密的 injection-induced leakage，以及固定电话闭环窃听/操纵案例。
+
+**研究链路：** RF injection → hardware nonlinearity → low-frequency secret 上变频/调制到泄漏载波 → RF receiver 捕获 → signal processing/recovery → eavesdropping 或 closed-loop manipulation。
+
+**长期价值：** 这是非常典型的“非协议型 wireless hack”：漏洞根因位于 mixed-signal hardware，SDR/RF equipment 用于频谱观察、捕获、扫描与恢复，适合扩展传统协议逆向之外的 RF 安全视角。
+
+**slides 状态：当前未找到可验证的独立公开 slides URL。** USENIX 已公开具体 session 与论文 PDF；后续若补充 slides/video，应更新本条目。
+
+### 本期最值得精读的会议 / 活动研究
+
+**Injected and Leaked。**
+
 ## 2026-08-21
 
 ### BLERP：BLE Re-Pairing Attacks and Defenses
