@@ -2,6 +2,13 @@
 
 本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-08-28
+
+### [PortaPack H4M Pro：硬件文件正式开源并合入 Mayhem](https://github.com/portapack-mayhem/mayhem-firmware/pull/3298)
+OpenSourceSDRLab 在 Mayhem PR #3298 提交 H4M Pro 的 PCB、Gerber 和 schematic 文件，该 PR 已合并。提交说明指出 H4M Pro schematic 与 H4M 基本相同，主要差别之一是 18650 电池座，并加入完整制造文件。
+
+这使 H4M Pro 从“可购买并运行 Mayhem 的硬件”进一步变成可审计、可改板、可复刻的软硬件平台。核心仍属于 HackRF/PortaPack 宽带 RF 生态，适合 Sub-GHz、VHF/UHF、ISM、航空/海事、TETRA 等多类接收与现场分析实验；PCB/Gerber 开放后还能进一步研究 RF layout、电源噪声、屏蔽和扩展接口对接收性能的影响。
+
 ## 2026-08-21
 
 ### [Pocket SDR v0.19](https://github.com/tomojitakasu/PocketSDR)
