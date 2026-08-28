@@ -4,6 +4,15 @@
 
 本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。长期优先来源见 [高价值信息源](../high-value-sources/index.md)。
 
+## 2026-08-28
+
+### [PySDR：Pulse Shaping](https://pysdr.org/content/pulse_shaping)
+系统解释 pulse shaping、ISI、matched filter、raised-cosine/root-raised-cosine（RC/RRC）、roll-off factor、eye diagram，并进一步联系 OQPSK 与 MSK。
+
+核心链路是：离散 symbol → 上采样 → Tx RRC pulse shaping → channel/noise → Rx matched RRC → timing recovery → symbol sampling。矩形 symbol 频谱过宽，而随便低通又会引入 ISI；Nyquist pulse-shaping 的关键是让其他 symbol 的 pulse 在目标采样时刻过零，从而允许时域重叠但不在理想判决点产生 ISI。
+
+Tx/Rx 各使用一个 RRC，级联后形成整体 RC 响应；接收端 matched filter 同时帮助在 AWGN 下最大化采样点 SNR。roll-off β 则体现频谱占用与时域脉冲长度之间的折中。建议用 Python/GNU Radio 同时观察 PSD、eye diagram 和 constellation，并改变 β、matched-filter 与 sampling instant。
+
 ## 2026-08-21
 
 ### [PySDR：End-to-End Example with RDS](https://pysdr.org/content/rds.html)
