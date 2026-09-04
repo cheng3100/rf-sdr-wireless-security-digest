@@ -2,6 +2,16 @@
 
 每期简报固定保留五个主题：软件项目、软硬件项目、RF / Wireless 动态、会议 / 活动高质量研究、RF 原理精读。动态栏目强调近期新闻与生态变化；会议研究栏目强调完整研究链路与高质量 slides/whitepaper/paper/tool；原理栏目强调长期学习价值。每期检索前会优先检查 [长期高价值信息源](../high-value-sources/index.md) 的增量，再扩展到更广泛来源。
 
+## 2026-09-04
+
+### [第 6 期：FISSURE、Meshtastic 2.8、DJI Bluetooth DUML 与 TrojPix](2026-09-04.md)
+
+**原始文本：** [查看本次 ChatGPT 发布的完整原文](../raw/2026-09-04.md)
+
+**主题入口：** [软件项目](2026-09-04.md#software) · [软硬件项目](2026-09-04.md#hardware-software) · [RF / Wireless 动态](2026-09-04.md#news) · [会议研究](2026-09-04.md#conference-research) · [RF 原理精读](2026-09-04.md#fundamentals)
+
+本期软件方向重点看 FISSURE 从单机 RF 工具集合向分布式 sensor、geolocation、TAK 与 situational-awareness 工作流演进；软硬件方向关注 Meshtastic 2.8.0 Alpha 的 public-key node identity 与 packet signing。动态部分聚焦 DJI 未认证 Bluetooth DUML 接口对 Wi-Fi 配置和控制链可用性的跨协议影响，并预览 GRCon26 的 Remote ID spoofing detection。会议研究选择 USENIX Security ’26 的 TrojPix，通过不可见 pixel modulation 驱动视频线缆产生可控 EM covert channel；原理精读选择 PySDR Filters，把 FIR/convolution 与实时 IQ chunk/filter-state 问题直接连接。
+
 ## 2026-08-28
 
 ### [第 5 期：AetherSDR、H4M Pro 开源、BlueZ 与主动电磁侧信道](2026-08-28.md)
