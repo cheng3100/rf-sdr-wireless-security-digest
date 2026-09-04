@@ -20,6 +20,24 @@
 - 若尚未找到可验证的公开材料链接，必须明确写“当前未找到可验证公开 slides/whitepaper/tool”，不得把会议主页或总日程冒充材料链接；
 - 若无法确认官方唯一 fragment，不猜测 URL；改用作者/研究团队的独立具体技术页面作为主要入口，同时把官方 track/list 页面仅作为会议归属证明。
 
+## 2026-09-04
+
+### [USENIX Security ’26：TrojPix — Electromagnetic Covert Channels via Imperceptible Pixel Modulation](https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-guoming)
+
+**论文 PDF：** [sec26_prepub_zhang-guoming.pdf](https://www.usenix.org/system/files/conference/usenixsecurity26/sec26_prepub_zhang-guoming.pdf)
+
+TrojPix 通过肉眼难以察觉的 pixel modulation，在数字视频线缆上确定性地产生可控电磁辐射，无需系统权限或硬件修改。研究链路为 pixel pattern → digital video signalling → cable EM emission → RF capture → pixel-to-sample mapping / adaptive decoding → covert channel。
+
+作者在 9 个商用显示器品牌和 15 种数字视频线缆上验证，报告最高 8.1 Mbps 吞吐与 208 m 最大距离，并演示 fake screen-off 和 foreground embedding 两种模式。
+
+**长期价值：** 这是典型“没有无线协议的 wireless hack”：显示链路和线缆成为非预期 RF transmitter，适合学习如何从可控物理泄漏源建立调制映射，再通过 RF receiver 与解码算法恢复数据。
+
+**slides 状态：当前未找到可验证的独立公开 slides URL。** USENIX 已公开精确 session 与论文 PDF。
+
+### 本期最值得精读的会议 / 活动研究
+
+**TrojPix。**
+
 ## 2026-08-28
 
 ### [USENIX Security ’26：Injected and Leaked — Actively Inducing Side-Channel Leakage Using Electromagnetic Injection and Hardware Nonlinearity](https://www.usenix.org/conference/usenixsecurity26/presentation/yan-haoran)
