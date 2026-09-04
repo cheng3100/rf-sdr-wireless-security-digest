@@ -45,4 +45,4 @@
 
 ## 最新一期
 
-[2026-08-28 · 第 5 期：AetherSDR、H4M Pro 开源、BlueZ 与主动电磁侧信道](weekly/2026-08-28.md)
+[2026-09-04 · 第 6 期：FISSURE、Meshtastic 2.8、DJI Bluetooth DUML 与 TrojPix](weekly/2026-09-04.md)
