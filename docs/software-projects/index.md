@@ -2,6 +2,11 @@
 
 本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless 研究项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-09-04
+
+### [FISSURE：分布式 RF operations / situational awareness](https://github.com/ainfosec/FISSURE)
+FISSURE 当前主线已从单机 RF 工具集合继续扩展到分布式 sensor node、RF emitter geolocation、artifact/target/alert 管理和 TAK operator workflow。GRCon26 的 [FISSURE: Tactical RF Operations and Situational Awareness with GNU Radio](https://events.gnuradio.org/event/28/contributions/859/) 进一步展示其从 signal analysis framework 向多节点 RF operations 平台演进的方向。
+
 ## 2026-08-28
 
 ### [AetherSDR v26.8.4](https://github.com/aethersdr/AetherSDR/releases/tag/v26.8.4)
