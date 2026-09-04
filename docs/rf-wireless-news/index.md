@@ -7,6 +7,14 @@
 - **RF / Wireless 动态**：看重时效性，回答“最近发生了什么、可能带来什么影响”。
 - **RF 原理精读**：看重长期学习价值，回答“某个经典理论或成熟工程概念如何被解释清楚”。
 
+## 2026-09-04
+
+### [DJI 无认证 Bluetooth DUML 接口：CVE-2026-78306](https://github.com/advisories/ghsa-vq46-xr65-w8q7)
+8 月 24 日公开。部分 DJI drone 暴露未认证的 DUML command interface over Bluetooth，处于 Bluetooth 范围内的攻击者可修改 Wi-Fi SSID、PSK、MAC、regulatory country code、channel 等配置，并可能通过修改 PSK、重启/禁用 Wi-Fi/Bluetooth 影响内部网络可达性、控制、视频和 telemetry 链路。
+
+### [GRCon26：Detecting Falsified UAV Telemetry — Remote ID spoofing detection](https://events.gnuradio.org/event/28/contributions/887/)
+GRCon26 当前 program 已出现 Remote ID spoofing detection、OpenWiFi/mmWave ISAC、低成本多天线、RFNoC FPGA 与 coherent array synchronization 等具体议题。Remote ID 研究明确把未加密广播视作 spoofing/falsified-data injection attack surface，后续值得继续追踪 paper/slides。
+
 ## 2026-08-28
 
 ### [BlueZ A2DP stream endpoint 栈溢出：ZDI-26-589 / CVE-2026-19774](https://www.zerodayinitiative.com/advisories/ZDI-26-589/)
