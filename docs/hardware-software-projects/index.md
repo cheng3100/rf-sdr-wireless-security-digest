@@ -2,6 +2,11 @@
 
 本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-09-04
+
+### [Meshtastic 2.8.0 Alpha](https://github.com/meshtastic/firmware)
+Meshtastic 在 8 月底进入 2.8.0 Alpha。除继续支持 ESP32、nRF52、RP2040/RP2350 和 Linux 设备外，这一轮开始引入 public-key node identity、XEdDSA packet signing 等身份/认证方向。适合沿 LoRa PHY/modem → embedded firmware → mesh routing → node identity/message authentication → client 的完整链路学习离网 mesh。
+
 ## 2026-08-28
 
 ### [PortaPack H4M Pro：硬件文件正式开源并合入 Mayhem](https://github.com/portapack-mayhem/mayhem-firmware/pull/3298)
