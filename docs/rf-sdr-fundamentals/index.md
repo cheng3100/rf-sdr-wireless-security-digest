@@ -4,6 +4,13 @@
 
 本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。长期优先来源见 [高价值信息源](../high-value-sources/index.md)。
 
+## 2026-09-04
+
+### [PySDR：Filters](https://pysdr.org/content/filters)
+从 low-pass/high-pass/band-pass/band-stop 开始，进一步解释 FIR、impulse response、convolution、filter taps 与 streaming filtering。重点是：长度为 M 的 FIR 每个输出都依赖过去输入，因此实时 IQ 被切成 USB/DMA/chunk buffer 后，filter state 必须跨 buffer 保留，否则每个 chunk 边界会产生错误或瞬态。
+
+建议做整段 FIR 与 chunked FIR 对照实验，先故意丢弃跨 buffer state 观察 boundary glitch，再使用 stateful filtering 恢复一致输出。它把数学 convolution 与真实 SDR userspace/driver streaming buffer 直接连接起来。
+
 ## 2026-08-28
 
 ### [PySDR：Pulse Shaping](https://pysdr.org/content/pulse_shaping)
