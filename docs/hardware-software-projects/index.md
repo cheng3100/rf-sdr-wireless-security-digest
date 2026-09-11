@@ -2,6 +2,11 @@
 
 本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-09-11
+
+### [RFSoC4x2 + GNU Radio 高带宽 SDR](https://events.gnuradio.org/event/28/contributions/870/)
+该 GRCon26 项目公开代码 [strath-sdr/rfsoc_qsfp_offload](https://github.com/strath-sdr/rfsoc_qsfp_offload)。架构此前已实现超过 70 Gbit/s 持续 RF sample host offload、最高约 2.4576 GHz instantaneous bandwidth，并继续扩展双向 QSFP transceiver。当前重点包括 PYNQ.remote/gRPC host-side 控制、运行时 DUC/DDC/clock 配置，以及 PL DDR burst capture，适合研究 RFSoC data plane、100GbE streaming、host/GPU DSP 与控制面的边界。
+
 ## 2026-09-04
 
 ### [Meshtastic 2.8.0 Alpha](https://github.com/meshtastic/firmware)
@@ -33,7 +38,7 @@ OpenSourceSDRLab 在 Mayhem PR #3298 提交 H4M Pro 的 PCB、Gerber 和 schemat
 ## 2026-08-14
 
 ### [PortaRF](https://www.cnx-software.com/2026/05/14/portarf-single-board-sdr-mixes-hackrf-one-and-portapack-h4m-hardware-adds-ai-voice-control/)
-2026 年出现的开源单板便携 SDR，尝试把 HackRF One 与 PortaPack H4M 的能力整合到一块 PCB 上，适合研究成熟 SDR 生态如何从板卡组合向完整设备演进。
+2026 年出现的开源单板便携 SDR，尝试把 HackRF One 与 PortaPack H4M 的能力整合到一块 PCB 上，适合研究成熟开源 SDR 生态如何从板卡组合向完整设备演进。
 
 ### [PortaPack Mayhem](https://github.com/portapack-mayhem/mayhem-firmware)
 稳定版为 2.4.0，同时保持大量 nightly 构建。项目持续展示受限 CPU/内存条件下 UI、DSP、存储和 RF 控制的协同问题。
