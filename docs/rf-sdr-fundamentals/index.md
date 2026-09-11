@@ -4,6 +4,13 @@
 
 本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。长期优先来源见 [高价值信息源](../high-value-sources/index.md)。
 
+## 2026-09-11
+
+### [PySDR：TDOA](https://pysdr.org/content/tdoa)
+系统解释 Time Difference of Arrival：多个空间分离 receiver 通过相对到达时间差估计 emitter 位置。重点包括 cross-correlation/GCC delay estimation、range-difference 双曲线约束、多 receiver geometry、reference receiver 引入的 measurement covariance，以及 noise/SNR 对定位误差的影响。
+
+它与 distributed SDR、RF geolocation 和 Remote ID spoofing detection 直接相连：单站回答“收到什么”，多站 TDOA进一步回答“信号从哪里来”。建议用同步 IQ 人工加入整数/小数 sample delay，对比不同 SNR、baseline 和 correlation 方法下的 delay/location error。
+
 ## 2026-09-04
 
 ### [PySDR：Filters](https://pysdr.org/content/filters)
