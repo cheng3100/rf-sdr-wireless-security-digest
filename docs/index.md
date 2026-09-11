@@ -45,4 +45,4 @@
 
 ## 最新一期
 
-[2026-09-04 · 第 6 期：FISSURE、Meshtastic 2.8、DJI Bluetooth DUML 与 TrojPix](weekly/2026-09-04.md)
+[2026-09-11 · 第 7 期：AetherSDR 26.9.2、RFSoC4x2、Bluetooth Mesh RCE 与 Remote ID spoofing detection](weekly/2026-09-11.md)
