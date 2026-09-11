@@ -7,6 +7,14 @@
 - **RF / Wireless 动态**：看重时效性，回答“最近发生了什么、可能带来什么影响”。
 - **RF 原理精读**：看重长期学习价值，回答“某个经典理论或成熟工程概念如何被解释清楚”。
 
+## 2026-09-11
+
+### [CVE-2026-5706：Silicon Labs Bluetooth Mesh extended advertisement 内存破坏](https://www.cve.org/CVERecord?id=CVE-2026-5706)
+Silicon Labs Bluetooth Mesh SDK 6.1.4 及更早版本处理 malformed extended advertisements 时可触发 out-of-bounds write、stack corruption，并可能达到 remote code execution。恶意消息需要来自已经加入 mesh 的节点，且主要影响支持 extended advertisement 的 provisioner。该问题提示 BLE advertising/discovery metadata 仍可能直接形成 embedded parser 的高风险 attack surface。
+
+### [GRCon26：会前最后阶段](https://events.gnuradio.org/event/28/)
+GRCon26 将于 2026-09-21 至 09-25 举行。当前 program 已包含 RFSoC 100GbE、RFNoC FPGA、distributed coherent arrays、5G ISAC、Remote ID spoofing detection 与实时 modulation classification 等具体议题；未来两周应优先检查各 contribution 的 slides、paper、flowgraph 和 code 是否上线。
+
 ## 2026-09-04
 
 ### [DJI 无认证 Bluetooth DUML 接口：CVE-2026-78306](https://github.com/advisories/ghsa-vq46-xr65-w8q7)
