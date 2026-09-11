@@ -2,6 +2,16 @@
 
 每期简报固定保留五个主题：软件项目、软硬件项目、RF / Wireless 动态、会议 / 活动高质量研究、RF 原理精读。动态栏目强调近期新闻与生态变化；会议研究栏目强调完整研究链路与高质量 slides/whitepaper/paper/tool；原理栏目强调长期学习价值。每期检索前会优先检查 [长期高价值信息源](../high-value-sources/index.md) 的增量，再扩展到更广泛来源。
 
+## 2026-09-11
+
+### [第 7 期：AetherSDR 26.9.2、RFSoC4x2、Bluetooth Mesh RCE 与 Remote ID spoofing detection](2026-09-11.md)
+
+**原始文本：** [查看本次 ChatGPT 发布的完整原文](../raw/2026-09-11.md)
+
+**主题入口：** [软件项目](2026-09-11.md#software) · [软硬件项目](2026-09-11.md#hardware-software) · [RF / Wireless 动态](2026-09-11.md#news) · [会议研究](2026-09-11.md#conference-research) · [RF 原理精读](2026-09-11.md#fundamentals)
+
+本期软件方向关注 AetherSDR v26.9.2 新增 RTL-SDR/ANAN-G2 receive backend 与多路 TCI DAX IQ skimming；软硬件方向选择 GRCon26 的 RFSoC4x2 + GNU Radio 100GbE 高带宽 SDR 架构，重点看 PYNQ.remote/gRPC 控制、运行时 DUC/DDC 和 PL DDR burst capture。动态部分聚焦 Silicon Labs Bluetooth Mesh SDK 的 malformed extended advertisement OOB write/RCE。会议研究选择 Remote ID spoofing detection，用 RSSI、Doppler 与 AoA 等 RF 物理证据校验 UAV 广播 telemetry；原理精读选择 PySDR TDOA，把多站同步、delay estimation 与 emitter geolocation 串起来。
+
 ## 2026-09-04
 
 ### [第 6 期：FISSURE、Meshtastic 2.8、DJI Bluetooth DUML 与 TrojPix](2026-09-04.md)
