@@ -2,6 +2,11 @@
 
 本页按**收录时间倒序**归档以软件实现为主的 SDR / wireless 研究项目。每个条目直接链接到项目仓库或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
 
+## 2026-09-11
+
+### [AetherSDR v26.9.2](https://github.com/aethersdr/AetherSDR/releases/tag/v26.9.2)
+本轮新增 experimental RTL-SDR USB receive path、experimental ANAN-G2/openHPSDR Protocol 2 receive path，以及最多四路 TCI DAX IQ subscription 支持多 band skimming。适合观察多 radio backend 如何共享 panadapter/waterfall、demod 与 station-control 层，同时按硬件真实能力进行 capability gating。
+
 ## 2026-09-04
 
 ### [FISSURE：分布式 RF operations / situational awareness](https://github.com/ainfosec/FISSURE)
