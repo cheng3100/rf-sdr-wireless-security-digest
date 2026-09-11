@@ -20,6 +20,22 @@
 - 若尚未找到可验证的公开材料链接，必须明确写“当前未找到可验证公开 slides/whitepaper/tool”，不得把会议主页或总日程冒充材料链接；
 - 若无法确认官方唯一 fragment，不猜测 URL；改用作者/研究团队的独立具体技术页面作为主要入口，同时把官方 track/list 页面仅作为会议归属证明。
 
+## 2026-09-11
+
+### [GRCon26：Detecting Falsified UAV Telemetry — An SDR Approach to Remote ID Spoofing Detection](https://events.gnuradio.org/event/28/contributions/887/)
+
+研究针对 Remote ID 等无人机广播系统的一个基本信任问题：packet 中的位置、速度与控制站信息可以被伪造，因此接收端不能只验证协议格式。作者提出用 SDR 建立独立物理验证链，通过 RSSI、Doppler shift、AoA 等 RF 特征与 packet 声称的位置/运动状态交叉验证。
+
+**研究链路：** Remote ID RF broadcast → 解析声明的 telemetry → SDR capture → RSSI / Doppler / AoA 等物理测量 → 比较广播状态与真实 RF 特征 → 判断 spoofing/falsified telemetry。
+
+**长期价值：** 这是一种可以推广到 ADS-B、AIS、beacon 等广播系统的方法论：协议字段可以伪造，但传播损耗、运动造成的 Doppler 与多站角度/到达时间等物理证据更难同时伪造。
+
+**材料状态：当前未找到可验证公开 slides/paper/tool 链接。** GRCon contribution 页面目前明确显示 `There are no materials yet`；会议结束后优先回查该具体页面。
+
+### 本期最值得精读的会议 / 活动研究
+
+**Remote ID spoofing detection。**
+
 ## 2026-09-04
 
 ### [USENIX Security ’26：TrojPix — Electromagnetic Covert Channels via Imperceptible Pixel Modulation](https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-guoming)
