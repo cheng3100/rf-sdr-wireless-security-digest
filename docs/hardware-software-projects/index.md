@@ -1,80 +1,50 @@
 # 软硬件项目
 
-本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目。每个条目直接链接到项目仓库、论文或官方页面；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+本页按**收录时间倒序**归档软硬件结合的 SDR / wireless 开源项目；完整历史上下文见 [Weekly](../weekly/index.md)。
+
+## 2026-09-18
+
+### [gr-autopilot：Closed-Loop GNU Radio Flowgraph Synthesis with SDR HIL](https://events.gnuradio.org/event/28/contributions/867/)
+GRCon26 项目把 LLM/MCP flowgraph generation 闭环到 USRP/ADALM-Pluto：生成 Tx/Rx flowgraph → 部署真实 SDR → 受控 RF path 测试 → 根据真实 RF feedback 迭代。长期价值在于把时钟、CFO、gain、noise、channel impairment 等真实硬件因素纳入自动 SDR 开发/回归闭环。当前 contribution 页面尚无 presentation materials。
 
 ## 2026-09-11
 
 ### [RFSoC4x2 + GNU Radio 高带宽 SDR](https://events.gnuradio.org/event/28/contributions/870/)
-该 GRCon26 项目公开代码 [strath-sdr/rfsoc_qsfp_offload](https://github.com/strath-sdr/rfsoc_qsfp_offload)。架构此前已实现超过 70 Gbit/s 持续 RF sample host offload、最高约 2.4576 GHz instantaneous bandwidth，并继续扩展双向 QSFP transceiver。当前重点包括 PYNQ.remote/gRPC host-side 控制、运行时 DUC/DDC/clock 配置，以及 PL DDR burst capture，适合研究 RFSoC data plane、100GbE streaming、host/GPU DSP 与控制面的边界。
+公开代码 [strath-sdr/rfsoc_qsfp_offload](https://github.com/strath-sdr/rfsoc_qsfp_offload)，覆盖 100GbE streaming、PYNQ.remote/gRPC、运行时 DUC/DDC 和 PL DDR burst capture。
 
 ## 2026-09-04
 
 ### [Meshtastic 2.8.0 Alpha](https://github.com/meshtastic/firmware)
-Meshtastic 在 8 月底进入 2.8.0 Alpha。除继续支持 ESP32、nRF52、RP2040/RP2350 和 Linux 设备外，这一轮开始引入 public-key node identity、XEdDSA packet signing 等身份/认证方向。适合沿 LoRa PHY/modem → embedded firmware → mesh routing → node identity/message authentication → client 的完整链路学习离网 mesh。
+LoRa mesh 引入 public-key node identity、XEdDSA packet signing 等身份/认证方向。
 
 ## 2026-08-28
 
-### [PortaPack H4M Pro：硬件文件正式开源并合入 Mayhem](https://github.com/portapack-mayhem/mayhem-firmware/pull/3298)
-OpenSourceSDRLab 在 Mayhem PR #3298 提交 H4M Pro 的 PCB、Gerber 和 schematic 文件，该 PR 已合并。提交说明指出 H4M Pro schematic 与 H4M 基本相同，主要差别之一是 18650 电池座，并加入完整制造文件。
-
-这使 H4M Pro 从“可购买并运行 Mayhem 的硬件”进一步变成可审计、可改板、可复刻的软硬件平台。核心仍属于 HackRF/PortaPack 宽带 RF 生态，适合 Sub-GHz、VHF/UHF、ISM、航空/海事、TETRA 等多类接收与现场分析实验；PCB/Gerber 开放后还能进一步研究 RF layout、电源噪声、屏蔽和扩展接口对接收性能的影响。
+### [PortaPack H4M Pro 开源硬件](https://github.com/portapack-mayhem/mayhem-firmware/pull/3298)
+PCB、Gerber 和 schematic 文件合入 Mayhem。
 
 ## 2026-08-21
 
 ### [Pocket SDR v0.19](https://github.com/tomojitakasu/PocketSDR)
-开源多通道 GNSS SDR，包括 2/4/8 通道 RF frontend、IF 采集与 Python/C/C++ 接收机。v0.19 加入 Galileo E1 CBOC / E5 AltBOC 等多级副载波 replica 的 int8 correlator 支持，并增强低 C/N0 acquisition/tracking、pilot extended coherent tracking 和多 stream 输出。
+多通道 GNSS RF frontend、IF 采集与完整接收机。
 
-### [HackRF 主线](https://github.com/greatscottgadgets/hackrf)
-稳定版仍为 2026.01.3，但主线持续推进 radio configuration mode、固定点 center-frequency/sample-rate、radio register locking 和 transceiver temperature 等 HackRF Pro 能力，值得继续观察 libhackrf、MCU firmware、gateware 与 RF transceiver 配置接口的演进。
-
-## 2026-08-14 · 高价值来源测试修订版
-
-### [PortaPack Mayhem Nightly 2026-07-26](https://github.com/portapack-mayhem/mayhem-firmware/releases)
-7 月 nightly 中出现 TETRA RX、VOR Navigation、EPIRB TX SGB 等无线应用相关变化。它持续体现 HackRF + PortaPack 这种受限嵌入式 RF 平台如何在 UI、DSP、存储和协议应用之间做资源取舍。
-
-### [Maia SDR](https://maia-sdr.org/)
-继续作为“RFIC + FPGA + Linux + Web UI”架构代表：AD936x 负责 RF 收发，FPGA 承担高带宽频谱/DSP 数据面，ARM/Linux 运行设备服务并导出 SigMF 数据。
+### [HackRF](https://github.com/greatscottgadgets/hackrf)
+持续演进 HackRF Pro radio configuration 能力。
 
 ## 2026-08-14
 
-### [PortaRF](https://www.cnx-software.com/2026/05/14/portarf-single-board-sdr-mixes-hackrf-one-and-portapack-h4m-hardware-adds-ai-voice-control/)
-2026 年出现的开源单板便携 SDR，尝试把 HackRF One 与 PortaPack H4M 的能力整合到一块 PCB 上，适合研究成熟开源 SDR 生态如何从板卡组合向完整设备演进。
-
 ### [PortaPack Mayhem](https://github.com/portapack-mayhem/mayhem-firmware)
-稳定版为 2.4.0，同时保持大量 nightly 构建。项目持续展示受限 CPU/内存条件下 UI、DSP、存储和 RF 控制的协同问题。
+HackRF + PortaPack 便携 RF 平台。
 
 ### [Maia SDR](https://maia-sdr.org/)
-以 ADALM-Pluto/Pluto+ 为主要平台，把高带宽 FFT/频谱处理放到 FPGA，ARM 侧运行 Rust 服务，并通过浏览器展示瀑布图和导出 SigMF IQ。
-
-## 2026-08-07
-
-### [PortaPack Mayhem Nightly 2026-07-26](https://github.com/portapack-mayhem/mayhem-firmware/releases)
-7 月继续保持 nightly 构建。项目把 HackRF、显示、按键、存储和设备端 RF 应用组合为便携平台，近期演进持续聚焦协议细节、UI 和现场稳定性。
-
-### [Maia SDR v0.12.0](https://github.com/maia-sdr/maia-sdr/releases)
-基于 ADALM-Pluto 的 FPGA SDR 项目，v0.12.0 更新 Rust 2024 生态及多个内部组件，继续提供高采样率瀑布图、Web UI 和 SigMF IQ 录制。
+AD936x + FPGA + Linux + Web UI 的完整 SDR 系统样本。
 
 ### [Pluto+](https://github.com/plutoplus/plutoplus)
-在 PlutoSDR 架构上扩展 Ethernet、外部参考时钟和 SD 卡等能力，并开放原理图与固件构建方法。适合研究 Zynq、AD936x、IIO、FPGA HDL 与 Linux 固件的完整边界。
-
-## 2026-08-01 · 四主题测试发布
-
-### [Maia SDR v0.12.0](https://github.com/maia-sdr/maia-sdr/releases)
-面向 ADALM-Pluto 的开源 FPGA SDR 系统，由 Amaranth HDL、Rust 嵌入式服务、内核模块和 WebAssembly UI 组成，支持高采样率实时瀑布图和 SigMF IQ 录制。
-
-### [PortaPack Mayhem 2.4.0](https://github.com/portapack-mayhem/mayhem-firmware)
-运行在 HackRF + PortaPack 上的社区固件，把 USB SDR 扩展为带显示、存储和设备端应用的便携 RF 平台。
-
-### [HackRF 2026.01.3](https://github.com/greatscottgadgets/hackrf)
-从 RF 硬件、CPLD、MCU 固件到 libhackrf 和主机工具均开放的完整 SDR 平台，适合从 USB streaming、buffer 生命周期和软硬件边界角度系统学习。
+PlutoSDR 扩展 Ethernet、外部参考时钟与 SD 卡。
 
 ## 2026-07-31
 
 ### [Field-Deployable RF Capture System](https://arxiv.org/abs/2607.01368)
-由 HackRF One、Raspberry Pi 5、GNSS 与高速 SSD 组成的便携 IQ 采集节点，重点涉及 USB streaming、持续写盘、时间与位置元数据及 SigMF 归档。
-
-### [OpenWXSDR](https://github.com/dl2sba/openwxsd)
-将 RTL-SDR 或 Airspy 与 Linux 主机组合成长期无人值守的探空气球接收平台，适合观察多 SDR 管理、自动扫描、任务调度与持续解码。
+HackRF One + Raspberry Pi 5 + GNSS + SSD 的便携 IQ 采集节点。
 
 ### [Open.Space](https://github.com/open-space-foundation)
-面向低成本可拼接 SDR 阵列的开源方向，适合学习多通道时钟、相位同步、阵元校准和数字波束形成。
+低成本可拼接 SDR 阵列与多通道同步方向。
