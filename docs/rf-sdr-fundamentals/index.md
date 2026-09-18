@@ -1,83 +1,52 @@
 # RF 原理精读
 
-本页按**收录时间倒序**归档值得精读的 RF / SDR 原理文章、论文、课程和演讲。每个条目直接链接到原文；需要查看同一期五个主题的完整上下文，可前往 [Weekly](../weekly/index.md)。
+本页按收录时间倒序归档长期高价值 RF / SDR 原理材料；完整历史上下文见 [Weekly](../weekly/index.md)。
 
-本页强调经典理论、基础概念和成熟工程原理的长期学习价值，不以新闻时效性为主要标准。长期优先来源见 [高价值信息源](../high-value-sources/index.md)。
+## 2026-09-18
+
+### [Wireless Pi：Design of a Low-SNR Receiver](https://wirelesspi.com/design-of-a-low-snr-receiver/)
+用完整 OFDM receiver 串起 multipath、CFO、AWGN、coarse/fine synchronization、FFT、channel estimation/equalization、residual phase tracking 和 iterative decoding。核心工程直觉是：低 SNR 下同步误差会直接改变 channel estimator/equalizer/decoder 是否收敛，synchronization 不是孤立前处理步骤。
 
 ## 2026-09-11
 
 ### [PySDR：TDOA](https://pysdr.org/content/tdoa)
-系统解释 Time Difference of Arrival：多个空间分离 receiver 通过相对到达时间差估计 emitter 位置。重点包括 cross-correlation/GCC delay estimation、range-difference 双曲线约束、多 receiver geometry、reference receiver 引入的 measurement covariance，以及 noise/SNR 对定位误差的影响。
-
-它与 distributed SDR、RF geolocation 和 Remote ID spoofing detection 直接相连：单站回答“收到什么”，多站 TDOA进一步回答“信号从哪里来”。建议用同步 IQ 人工加入整数/小数 sample delay，对比不同 SNR、baseline 和 correlation 方法下的 delay/location error。
+多 receiver cross-correlation/GCC delay estimation、range-difference geometry、同步和 measurement covariance。
 
 ## 2026-09-04
 
 ### [PySDR：Filters](https://pysdr.org/content/filters)
-从 low-pass/high-pass/band-pass/band-stop 开始，进一步解释 FIR、impulse response、convolution、filter taps 与 streaming filtering。重点是：长度为 M 的 FIR 每个输出都依赖过去输入，因此实时 IQ 被切成 USB/DMA/chunk buffer 后，filter state 必须跨 buffer 保留，否则每个 chunk 边界会产生错误或瞬态。
-
-建议做整段 FIR 与 chunked FIR 对照实验，先故意丢弃跨 buffer state 观察 boundary glitch，再使用 stateful filtering 恢复一致输出。它把数学 convolution 与真实 SDR userspace/driver streaming buffer 直接连接起来。
+FIR/convolution 与实时 IQ chunk/filter-state 的连续性。
 
 ## 2026-08-28
 
 ### [PySDR：Pulse Shaping](https://pysdr.org/content/pulse_shaping)
-系统解释 pulse shaping、ISI、matched filter、raised-cosine/root-raised-cosine（RC/RRC）、roll-off factor、eye diagram，并进一步联系 OQPSK 与 MSK。
-
-核心链路是：离散 symbol → 上采样 → Tx RRC pulse shaping → channel/noise → Rx matched RRC → timing recovery → symbol sampling。矩形 symbol 频谱过宽，而随便低通又会引入 ISI；Nyquist pulse-shaping 的关键是让其他 symbol 的 pulse 在目标采样时刻过零，从而允许时域重叠但不在理想判决点产生 ISI。
-
-Tx/Rx 各使用一个 RRC，级联后形成整体 RC 响应；接收端 matched filter 同时帮助在 AWGN 下最大化采样点 SNR。roll-off β 则体现频谱占用与时域脉冲长度之间的折中。建议用 Python/GNU Radio 同时观察 PSD、eye diagram 和 constellation，并改变 β、matched-filter 与 sampling instant。
+RC/RRC、ISI、matched filter、eye diagram 与 timing recovery。
 
 ## 2026-08-21
 
-### [PySDR：End-to-End Example with RDS](https://pysdr.org/content/rds.html)
-使用真实 FM 广播中的 Radio Data System（RDS）把多个 SDR/DSP 环节串成完整 receiver：IQ acquisition → FM demod → frequency shift → filtering → decimation/resampling → symbol timing → fine frequency synchronization → BPSK demod → bit/byte parsing。
-
-适合作为 IQ Sampling、Link Budget、Synchronization 之后的整链路练习。重点不是单个算法，而是观察采样率转换、滤波、频偏和同步状态如何层层影响最终 protocol decode。
-
-## 2026-08-14 · 高价值来源测试修订版
-
-### [PySDR：Synchronization](https://pysdr.org/content/sync.html)
-把 symbol timing、coarse frequency synchronization、fine frequency synchronization 与 Costas Loop 放进同一接收链路中解释。适合建立“先处理大频偏与采样时刻，再由细跟踪环持续收敛残余 CFO/phase”的整体模型。
-
-PySDR 以 Pluto 在 2.4 GHz、25 ppm 条件下可能对应约 ±60 kHz CFO 为例，直观说明本振 ppm 误差如何映射为复基带中的实际频偏。
+### [PySDR：RDS End-to-End](https://pysdr.org/content/rds.html)
+IQ → FM demod → filtering/resampling → synchronization → BPSK → RDS parsing。
 
 ## 2026-08-14
 
-### [PySDR：IQ Sampling](https://pysdr.org/content/sampling.html)
-从复数、正负频率、混频和采样解释 SDR 为什么通常输出 I/Q 两路构成的复基带信号。建议重点理解复采样带宽、负频率、频偏导致的 IQ 平面旋转、IQ imbalance 镜像以及零中频 DC offset/LO leakage。
+### [PySDR：Synchronization](https://pysdr.org/content/sync.html)
+Symbol timing、coarse/fine frequency synchronization 与 Costas Loop。
 
-可配合真实 IQ 文件做三个离线实验：FFT 观察正负频率；人为加入频偏观察频谱平移和星座旋转；人为修改 I/Q 幅度或相位观察镜像 spur。
+### [PySDR：IQ Sampling](https://pysdr.org/content/sampling.html)
+复基带、正负频率、IQ imbalance 与零中频工程直觉。
 
 ## 2026-08-07
 
 ### [PySDR：Link Budgets](https://pysdr.org/zh/content-zh/link_budgets.html)
-从系统视角解释发射功率、天线增益、自由空间路径损耗、噪声带宽与 SNR 如何组成链路预算，并用 ADS-B 给出完整示例。
+发射功率、天线、传播损耗、噪声和 SNR 的系统链路。
 
-适合把天线、传播、前端、噪声和解调所需 SNR 连接起来，帮助从“软件看频谱”进入完整无线链路的系统思维。
+## 2026-08-01
 
-## 2026-08-01 · 四主题测试发布
+### [Wireless Pi：The Fundamental Problem of Synchronization](https://wirelesspi.com/fundamental-problem-synchronization/)
+载波频率、相位和符号定时同步的总体模型。
 
-### [The Fundamental Problem of Synchronization](https://wirelesspi.com/fundamental-problem-synchronization/)
-系统解释数字接收机为何必须分别处理载波频率、载波相位和符号定时同步，并建立“频偏导致 IQ 平面持续旋转”的工程直觉。
+### [Wireless Pi：FLL](https://wirelesspi.com/how-a-frequency-locked-loop-fll-works/)
+频率误差检测与反馈跟踪。
 
-### [How a Frequency Locked Loop Works](https://wirelesspi.com/how-a-frequency-locked-loop-fll-works/)
-从频率误差检测和反馈环路角度解释 FLL 如何跟踪载波频偏，适合在理解同步总体问题后继续阅读。
-
-### [Effect of a Sampling Clock Offset on an OFDM Waveform](https://wirelesspi.com/effect-of-a-sampling-clock-offset-on-an-ofdm-waveform/)
-解释采样时钟偏差如何在 OFDM 系统中逐步累积，并与残余 CFO、FFT 输入和子载波相位变化产生联系。
-
-## 2026-08-01 · 初始测试
-
-### [Phase Sync in Digital Phased Arrays Through Direct RF Sampling — Part 1](https://www.analog.com/en/resources/technical-articles/phase-sync-digital-phased-arrays-part-1.html)
-讨论直接 RF 采样阵列中的多通道相位同步，重点解释共享参考时钟、确定性延迟、SYSREF、JESD204、数字下变频器与 NCO 初始相位如何共同决定通道间相位可重复性。
-
-## 2026-07-31
-
-### [IQ Sampling](https://pysdr.org/content/sampling.html)
-从复数、混频、下变频和采样解释 SDR 为什么输出 IQ 数据，复基带带宽与采样率如何对应，以及负频率、I/Q 不平衡和镜像抑制的工程含义。
-
-### [Digital Modulation](https://pysdr.org/content/digital_modulation.html)
-通过星座图与 Python 示例解释 symbol、bit、PSK/QAM、噪声、频偏和定时偏差，是从观察频谱进入数字解调的基础材料。
-
-### [What Is a Symbol Timing Offset and How It Distorts the Rx Signal?](https://wirelesspi.com/what-is-a-symbol-timing-offset-and-how-it-distorts-the-rx-signal/)
-解释采样点偏离最佳符号时刻后，如何造成幅度损失、ISI、星座扩散和判决裕量下降，并为定时恢复算法建立直觉。
+### [Wireless Pi：Sampling Clock Offset in OFDM](https://wirelesspi.com/effect-of-a-sampling-clock-offset-on-an-ofdm-waveform/)
+SCO 对 OFDM 子载波相位与 FFT 的影响。
