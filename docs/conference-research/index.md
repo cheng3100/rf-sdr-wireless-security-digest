@@ -1,125 +1,44 @@
 # 会议 / 活动高质量研究
 
-本页按**收录时间倒序**归档 Black Hat、DEF CON、USENIX Security、GRCon、European GNU Radio Days 等会议和活动中，与 RF / SDR / wireless hack 强相关、且具有完整研究链路的高质量材料。
+按收录时间倒序归档 RF / SDR / wireless hack 的完整会议研究链；具体材料优先于会议首页，无法验证 slides/whitepaper/tool 时明确标注。
 
-这里关注的不是“会议新闻”，而是**研究本身**：发现某个 RF / wireless 漏洞或系统问题，解释协议/物理层/硬件机制，使用 SDR 或 RF 测试手段进行捕获、重放、注入、欺骗或验证，并尽量追踪 slides、whitepaper、paper、tool、video 或 demo。
+## 2026-09-18
 
-## 收录标准
+### [USENIX Security ’26：PrivacyShield — Relaying BLE Beacons to Counter Unsolicited Tracking](https://www.usenix.org/conference/usenixsecurity26/presentation/hofhammer)
 
-- 有明确研究问题或真实漏洞；
-- 能解释 RF / PHY / MAC / protocol / hardware 中至少一个关键机制；
-- 优先有官方 slide、whitepaper、paper、video、tool 或代码；
-- 使用 SDR、RF 测试设备、无线芯片、嵌入式硬件或电磁测量手段进行验证；
-- 对复现实验、协议逆向、无线安全或系统设计具有长期参考价值。
+**论文：** https://francozappa.github.io/publication/2026/pshield/paper.pdf  
+**Artifact：** https://github.com/HexHive/privacyshield
 
-## 链接规则
+研究利用 offline finding BLE beacon 缺少足够位置真实性认证这一点，把 beacon 捕获后经网络分发到远端 ESP32 relay 重放，让第三方手机在错误地点上报 beacon，从而混淆 stalking tag 的位置。Artifact 包含 Flask relay server、AirGuard Android 修改、ESP32 relay firmware、Sniffle 相关代码和 Find My location-report 工具。
 
-- 会议研究条目必须优先给出**能直接定位到具体议题/课程/材料的链接**，不能只链接会议首页、总日程或筛选后的 track 页面；
-- 对 Black Hat 这类单页 schedule，如果具体条目有 fragment ID，必须保留完整 `#fragment`；
-- 若官方 slides / whitepaper / tool 已公开，直接链接材料；
-- 若尚未找到可验证的公开材料链接，必须明确写“当前未找到可验证公开 slides/whitepaper/tool”，不得把会议主页或总日程冒充材料链接；
-- 若无法确认官方唯一 fragment，不猜测 URL；改用作者/研究团队的独立具体技术页面作为主要入口，同时把官方 track/list 页面仅作为会议归属证明。
+**研究链：** BLE beacon → capture → network relay → ESP32 RF retransmission → crowdsourced geolocation backend → privacy effect。
+
+**Slides 状态：当前未找到可验证的独立公开 slides URL。**
 
 ## 2026-09-11
 
-### [GRCon26：Detecting Falsified UAV Telemetry — An SDR Approach to Remote ID Spoofing Detection](https://events.gnuradio.org/event/28/contributions/887/)
-
-研究针对 Remote ID 等无人机广播系统的一个基本信任问题：packet 中的位置、速度与控制站信息可以被伪造，因此接收端不能只验证协议格式。作者提出用 SDR 建立独立物理验证链，通过 RSSI、Doppler shift、AoA 等 RF 特征与 packet 声称的位置/运动状态交叉验证。
-
-**研究链路：** Remote ID RF broadcast → 解析声明的 telemetry → SDR capture → RSSI / Doppler / AoA 等物理测量 → 比较广播状态与真实 RF 特征 → 判断 spoofing/falsified telemetry。
-
-**长期价值：** 这是一种可以推广到 ADS-B、AIS、beacon 等广播系统的方法论：协议字段可以伪造，但传播损耗、运动造成的 Doppler 与多站角度/到达时间等物理证据更难同时伪造。
-
-**材料状态：当前未找到可验证公开 slides/paper/tool 链接。** GRCon contribution 页面目前明确显示 `There are no materials yet`；会议结束后优先回查该具体页面。
-
-### 本期最值得精读的会议 / 活动研究
-
-**Remote ID spoofing detection。**
+### [GRCon26：Remote ID Spoofing Detection](https://events.gnuradio.org/event/28/contributions/887/)
+用 RSSI、Doppler、AoA 等 RF 物理证据与 UAV 广播 telemetry 交叉验证。当前无 materials。
 
 ## 2026-09-04
 
-### [USENIX Security ’26：TrojPix — Electromagnetic Covert Channels via Imperceptible Pixel Modulation](https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-guoming)
-
-**论文 PDF：** [sec26_prepub_zhang-guoming.pdf](https://www.usenix.org/system/files/conference/usenixsecurity26/sec26_prepub_zhang-guoming.pdf)
-
-TrojPix 通过肉眼难以察觉的 pixel modulation，在数字视频线缆上确定性地产生可控电磁辐射，无需系统权限或硬件修改。研究链路为 pixel pattern → digital video signalling → cable EM emission → RF capture → pixel-to-sample mapping / adaptive decoding → covert channel。
-
-作者在 9 个商用显示器品牌和 15 种数字视频线缆上验证，报告最高 8.1 Mbps 吞吐与 208 m 最大距离，并演示 fake screen-off 和 foreground embedding 两种模式。
-
-**长期价值：** 这是典型“没有无线协议的 wireless hack”：显示链路和线缆成为非预期 RF transmitter，适合学习如何从可控物理泄漏源建立调制映射，再通过 RF receiver 与解码算法恢复数据。
-
-**slides 状态：当前未找到可验证的独立公开 slides URL。** USENIX 已公开精确 session 与论文 PDF。
-
-### 本期最值得精读的会议 / 活动研究
-
-**TrojPix。**
+### [USENIX Security ’26：TrojPix](https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-guoming)
+不可见 pixel modulation → video cable EM emission → RF capture → covert channel；论文已公开，slides 未找到。
 
 ## 2026-08-28
 
-### [USENIX Security ’26：Injected and Leaked — Actively Inducing Side-Channel Leakage Using Electromagnetic Injection and Hardware Nonlinearity](https://www.usenix.org/conference/usenixsecurity26/presentation/yan-haoran)
-
-**论文 PDF：** [usenixsecurity26-yan-haoran.pdf](https://www.usenix.org/system/files/usenixsecurity26-yan-haoran.pdf)
-
-研究把 EM injection 与 EM side-channel leakage 连接起来：攻击者主动注入 RF，让放大器、ADC、电源转换器等非线性器件把低频 secret signal 与注入 carrier 混频/调制，从而把原本难以观测的低频秘密搬移到更容易远距离接收的电磁频段。
-
-作者设计 InjectEave，并展示使用可获得 RF equipment 对有线/无线耳机播放音频进行约 30 m 远距离窃听及穿墙实验；同时分析智能家居功耗、模拟传感器输入等低频秘密的 injection-induced leakage，以及固定电话闭环窃听/操纵案例。
-
-**研究链路：** RF injection → hardware nonlinearity → low-frequency secret 上变频/调制到泄漏载波 → RF receiver 捕获 → signal processing/recovery → eavesdropping 或 closed-loop manipulation。
-
-**长期价值：** 这是非常典型的“非协议型 wireless hack”：漏洞根因位于 mixed-signal hardware，SDR/RF equipment 用于频谱观察、捕获、扫描与恢复，适合扩展传统协议逆向之外的 RF 安全视角。
-
-**slides 状态：当前未找到可验证的独立公开 slides URL。** USENIX 已公开具体 session 与论文 PDF；后续若补充 slides/video，应更新本条目。
-
-### 本期最值得精读的会议 / 活动研究
-
-**Injected and Leaked。**
+### [USENIX Security ’26：Injected and Leaked](https://www.usenix.org/conference/usenixsecurity26/presentation/yan-haoran)
+RF injection → hardware nonlinearity → secret up-conversion → RF capture；InjectEave 展示约 30 m 音频窃听等实验。
 
 ## 2026-08-21
 
-### BLERP：BLE Re-Pairing Attacks and Defenses
-
-**具体研究页：** [NDSS — BLERP: BLE Re-Pairing Attacks and Defenses](https://www.ndss-symposium.org/ndss-paper/blerp-ble-re-pairing-attacks-and-defenses/)
-
-**论文 PDF：** [2026-f121-paper.pdf](https://www.ndss-symposium.org/wp-content/uploads/2026-f121-paper.pdf)
-
-**Slides PDF：** [f0121-sacchetti-slides.pdf](https://www.ndss-symposium.org/wp-content/uploads/f0121-sacchetti-slides.pdf)
-
-**Black Hat Asia 2026 研究团队条目：** [EURECOM — Exploiting BLE re-pairing with the BLERP attacks](https://www.eurecom.fr/en/publication/8697?slug=exploiting-ble-re-pairing-with-the-blerp-attacks)
-
-BLERP 研究 BLE re-pairing 的信任边界。BLE 允许已配对设备重新协商并替换安全状态/密钥，作者分析出多项设计层漏洞，包括 unauthenticated re-pairing 与 security-level downgrade，并构造 Central/Peripheral impersonation、single-channel MitM 和 double-channel MitM 等攻击。
-
-作者还实现了 BLERP toolkit，使用低成本 **nRF52** 与 **Mynewt / NimBLE / Scapy** 做 OTA pairing/re-pairing 测试和端到端 MitM，并在 22 个目标上评估。
-
-**研究链路：** BLE pairing/session establishment → re-pairing trust boundary → key/security-level overwrite or downgrade → nRF52 OTA tool → impersonation/MitM → mitigation。
-
-**长期价值：** 这是很适合 wireless hack 学习的方法论样本：从规范/状态机入手，寻找 trust boundary，再用低成本无线硬件构造可复现实验，最后回到协议修复。
-
-### 本期最值得精读的会议 / 活动研究
-
-**BLERP。** 它的材料链非常完整：独立 research page、paper、slides、Black Hat Asia 研究条目和可复现实验工具都能串起来。
+### [NDSS：BLERP — BLE Re-Pairing Attacks and Defenses](https://www.ndss-symposium.org/ndss-paper/blerp-ble-re-pairing-attacks-and-defenses/)
+具备 paper、slides、nRF52/Mynewt/NimBLE/Scapy 工具链与真实设备验证。
 
 ## 2026-08-14
 
 ### [Black Hat USA 2026：Blind Trust in the 6 GHz Band — Weaponizing Wi-Fi AFC](https://blackhat.com/us-26/briefings/schedule/#blind-trust-in-the-6-ghz-band-weaponizing-wi-fi-automated-frequency-coordination-afc-53998)
+使用具体 session fragment。当前未找到可验证独立 slides/whitepaper/tool URL。
 
-研究对象是 6 GHz 标准功率 Wi-Fi 使用的 Automated Frequency Coordination。Black Hat 官方日程确认该议题于 2026-08-06 11:05 举行，讲者为 Yilu Dong、Tianchang Yang，contributors 为 Arupjyoti Bhuyan、Syed Rafiul Hussain。
-
-**Black Hat 具体议题入口：** [Blind Trust in the 6 GHz Band — Weaponizing Wi-Fi AFC](https://blackhat.com/us-26/briefings/schedule/#blind-trust-in-the-6-ghz-band-weaponizing-wi-fi-automated-frequency-coordination-afc-53998)
-
-**具体技术背景/研究报道：** [Dark Reading — 6 GHz Wi-Fi Flaws Could Disrupt Critical Systems](https://www.darkreading.com/perimeter/6-ghz-wi-fi-flaws-disrupt-critical-systems)
-
-**研究链路：** 6 GHz shared spectrum 规则 → AFC 输入与信任边界 → 位置/设备参数等输入被错误信任或伪造 → 频谱授权决策异常 → 潜在 RF 干扰与共存风险。
-
-**slides / whitepaper / tool 状态：** 当前未找到可验证的独立公开 slides / whitepaper / tool URL。
-
-### Red Team SIGINT — Practical SDR hacking for mission-critical, automotive, aviation, and marine targets
-
-**主要具体入口：** [Midnight Blue — Red Team SIGINT: Practical SDR hacking](https://www.midnightblue.nl/explore/training/red-team-sigint-practical-sdr-hacking)
-
-**Black Hat 官方归属/课程列表证明：** [Black Hat USA 2026 Wireless Training](https://blackhat.com/us-26/training/schedule/index.html?track%5B%5D=wireless)
-
-**相关具体案例材料：** [Midnight Blue — Analyzing the Taiwan High-Speed Rail (THSR) TETRA cyber incident, part 1](https://www.midnightblue.nl/blog/analyzing-the-taiwan-high-speed-rail-thsr-tetra-cyber-incident-part-1)
-
-课程覆盖 RF、SDR、SIGINT、未知信号识别，以及 automotive、aviation、marine、physical access、TETRA、DMR、P25 等 mission-critical radio。
-
-**slides / lab / tool 状态：** 当前未找到可验证的 Black Hat 公开 slide deck URL。
+### [Red Team SIGINT](https://www.midnightblue.nl/explore/training/red-team-sigint-practical-sdr-hacking)
+覆盖 TETRA/DMR/P25、automotive、aviation、marine 等 SDR/SIGINT 场景；当前未找到 Black Hat 公开 slide deck。
